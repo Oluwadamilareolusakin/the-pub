@@ -2,7 +2,15 @@ Rails.application.routes.draw do
   root 'users#timeline'
   get '/dashboard', to: 'users#show'
   
-  resources :posts
+  resources :posts do
+    resources :comments, module: :posts
+  end
+
+  resources :users do
+    member do
+      resources :comments
+    end
+  end
   
   devise_for :users, controllers: {
     sessions: 'users/sessions',
