@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_133113) do
+ActiveRecord::Schema.define(version: 2019_10_07_174232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,11 +46,23 @@ ActiveRecord::Schema.define(version: 2019_10_07_133113) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "images", force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "friend_requests", force: :cascade do |t|
+    t.integer "requester_id"
+    t.integer "requested_id"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_images_on_user_id"
+    t.index ["requested_id", "requester_id"], name: "index_friend_requests_on_requested_id_and_requester_id", unique: true
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "friend_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["friend_id", "user_id"], name: "index_friendships_on_friend_id_and_user_id", unique: true
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -95,7 +107,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_133113) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "users"
-  add_foreign_key "images", "users"
+  add_foreign_key "friendships", "users"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
 end
