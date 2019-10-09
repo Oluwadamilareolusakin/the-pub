@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
   def timeline
     @post = @user.posts.build
     @posts = Post.all
+    @comment = Comment.new
   end
 
   private
