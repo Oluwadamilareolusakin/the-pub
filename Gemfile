@@ -27,8 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'rspec-rails'
 
 gem 'devise'
-gem 'omniauth'
 gem 'font-awesome-rails'
+gem 'omniauth'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

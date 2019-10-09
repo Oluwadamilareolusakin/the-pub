@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
-  before_action :set_like, only: %i[ destroy ]
+  before_action :set_like, only: %i[destroy]
 
   def create
     @like = @likeable.likes.build
@@ -7,15 +9,16 @@ class LikesController < ApplicationController
     @like.save
     flash[:success] = "You liked #{@likeable.user.name}'s #{@like.likeable_type.downcase}"
     redirect_back_or_to root_path
-  end 
+  end
 
   def destroy
     @like.destroy
     redirect_back_or_to root_path
   end
 
-  private 
-    def set_like
-      @like = Like.find(params[:id])
-    end
+  private
+
+  def set_like
+    @like = Like.find(params[:id])
+  end
 end
