@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'users#timeline'
-  get '/dashboard', to: 'users#show'
+  root 'static_pages#timeline'
+  get '/dashboard', to: 'static_pages#dashboard'
   
   resources :posts
   
