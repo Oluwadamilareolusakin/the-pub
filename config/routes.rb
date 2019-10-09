@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root 'users#timeline'
-  get '/dashboard', to: 'users#show'
+  root 'static_pages#timeline'
+  get '/dashboard', to: 'static_pages#dashboard'
   
-  resources :posts
+  resources :posts, only: %i[ show destroy create ]
   
   devise_for :users, controllers: {
     sessions: 'users/sessions',
