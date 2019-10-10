@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
-  before_action :authenticate_user!
+class StaticPagesController < ApplicationController
   before_action :set_user
+  before_action :authenticate_user!
 
-  def index
-    @users = User.all
-  end
-
-  def show; end
+  def dashboard; end
 
   def friends; end
 
@@ -16,7 +12,10 @@ class UsersController < ApplicationController
 
   def notifications; end
 
-  def timeline; end
+  def timeline
+    @post = @user.posts.build
+    @posts = Post.all
+  end
 
   private
 
