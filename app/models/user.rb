@@ -37,4 +37,14 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def become_friends_with(user)
+    return if friends.include(user)
+    friends << user
+  end
+
+  def unfriend(user)
+    return if !friends.include(user)
+    friends.delete(user)
+  end
 end

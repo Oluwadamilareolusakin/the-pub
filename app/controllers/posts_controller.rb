@@ -3,6 +3,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show destroy]
   before_action :store_url
+  
+  def timeline
+    @post = current_user.posts.build
+    @posts = Post.all
+    @comment = Comment.new
+  end
+
   def show; end
 
   def create

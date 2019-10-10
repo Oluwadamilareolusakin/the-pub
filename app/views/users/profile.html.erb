@@ -1,0 +1,7 @@
+<% if  current_user.requested_friendship?(@user) && !current_user.friends_with(@user)%>
+  <%= link_to  "Send Friend Request", friend_requests_path(@user) %>
+<% elsif !current_user.requested_friendship?(@user) %>
+  <%= link_to  "Send Friend Request", friend_requests_path(@user) %>
+<% else %>
+  <%= link_to  "Unfriend", friendships_path(@user), method: :delete %>
+<% end %>
