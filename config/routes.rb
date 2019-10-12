@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'posts#timeline'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     confirmations: 'users/confirmations',
@@ -14,15 +15,18 @@ Rails.application.routes.draw do
     get '/sign_out', to: 'users/sessions#destroy'
   end
 
-  root 'posts#timeline'
-  resources :posts, only: %i[ show destroy create ] do
+  resources :posts, only: %i[ destroy create show] do
     resources :comments, module: :posts
     resources :likes, module: :posts
   end
   
   resources :friendships, only: %i[create destroy]
   resources :friend_requests, only: %i[create destroy]
-  resources :notifications
+  resources :notifications, only: %i[ create destroy index] do
+    collection do
+      post :mark_as_read
+    end
+  end
 
   
   
