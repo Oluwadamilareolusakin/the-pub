@@ -17,7 +17,8 @@ class User < ApplicationRecord
   has_many :received_notifications, through: :notifications, source: :receipient
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :trackable, omniauth_providers: %i[facebook github]
+         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :trackable, 
+         omniauth_providers: %i[facebook github]
 
   # validationss
   validates :name, presence: true
