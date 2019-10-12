@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships, source: :friend
   has_many :requesters, through: :passive_friend_requests, source: :requester
   has_many :requesteds, through: :active_friend_requests, source: :requested
+  has_many :notifications, dependent: :destroy
+  has_many :received_notifications, through: :notifications, source: :receipient
 
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :trackable, omniauth_providers: %i[facebook github]
@@ -39,12 +41,36 @@ class User < ApplicationRecord
   end
 
   def become_friends_with(user)
-    return if friends.include(user)
+    return if friends.include?(user)
     friends << user
   end
 
   def unfriend(user)
-    return if !friends.include(user)
+    return if !friends.include?(user)
     friends.delete(user)
+  end
+
+  def request_friendship_with(user)
+    requesteds << user
+  end
+
+  def friend_request_with?(user)
+    requesteds.include?(user) || requesters.include?(user)
+  end
+
+  def requester?(user)
+    requesteds.include?(user)
+  end
+
+  def friends_with(user)
+    friends.include?(user)
+  end
+
+  def remove_friend_request_with(user)
+    if requesteds.include?(user)
+      requesteds.delete(user)
+    elsif requesters.include?(user)
+      requesters.delete(user)
+    end
   end
 end

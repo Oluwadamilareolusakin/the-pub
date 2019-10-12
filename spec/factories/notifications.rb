@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :notification do
-    user { nil }
+    notifyable_id { 1 }
+    notifyable_type { "MyString" }
     message { "MyString" }
   end
 end

@@ -10,6 +10,7 @@ class Post < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
   has_one_attached :image
   has_many :likes, as: :likeable, dependent: :destroy
+  has_many :notifications, as: :notifyable
 
   #validations
   validates :content, presence: true

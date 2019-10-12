@@ -10,6 +10,7 @@ require 'faker'
 50.times do 
   name = Faker::Name.name
   email = Faker::Internet.email
-  username = Faker::Name.name.join
-  User.create(name: name, email: email, usernmame: username, password: 'Apassword1')
+  username = Faker::Name.name.split(' ').join('')
+  @user = User.create(name: name, email: email, password: 'Apassword1')
+  @user.confirm
 end
