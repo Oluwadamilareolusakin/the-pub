@@ -2,6 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show destroy]
+  before_action :authenticate_user!
   before_action :store_url
 
   

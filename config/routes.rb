@@ -32,11 +32,10 @@ Rails.application.routes.draw do
 
   
   
-
   get '/friends', to: 'users#friends'
   get '/friend_requests', to: 'users#friend_requests'
   get '/notifications', to: 'users#notifications'
-  get '/profile/:id', to: 'users#show'
+  get '/profiles/:id', to: 'users#show', as: 'profile'
   
   
   
