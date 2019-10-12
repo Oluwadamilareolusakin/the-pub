@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def store_url
-    session[:url] = request.get? ? request.original_url : nil
+    session[:url] = request.original_url
   end
 end
