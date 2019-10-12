@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
 
-  def show; 
+  def show
     @user = User.find(params[:id])
   end
 
@@ -11,8 +13,6 @@ class UsersController < ApplicationController
   def friend_requests; end
 
   def notifications; end
-
-  
 
   private
 

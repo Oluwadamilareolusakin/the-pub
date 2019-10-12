@@ -30,7 +30,6 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 
-
 gem 'font-awesome-rails'
 gem 'omniauth'
 # Use Active Storage variant

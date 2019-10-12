@@ -3,7 +3,7 @@
 require 'faker'
 
 FactoryBot.define do
-  factory :user, aliases: [:requester, :requested] do
+  factory :user, aliases: %i[requester requested] do
     email { Faker::Internet.email }
     name { Faker::Name.name }
     password { 'A6charpasswordforsure' }
@@ -14,7 +14,6 @@ FactoryBot.define do
       name { Faker::Name.name }
       email { Faker::Internet.email }
     end
-
 
     factory :jack do
       name { Faker::Name.name }
