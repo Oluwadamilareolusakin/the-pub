@@ -10,3 +10,4 @@ files:
     - "Rakefile"
     - "app/controllers/*"
     - 'spec/*'
+    - 'models/*'
