@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :comments, module: :posts
     resources :likes, module: :posts
   end
+
+  get '/posts', to: 'posts#timeline'
   
   resources :friendships, only: %i[create destroy]
   resources :friend_requests, only: %i[create destroy]
