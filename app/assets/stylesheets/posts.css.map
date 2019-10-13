@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAGA,cAAc;EACZ,KAAK,EAAE,GAAG;;AAGZ,eAAe;EACb,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,KAAK",
+"sources": ["posts.scss"],
 "names": [],
 "file": "posts.css"
 }

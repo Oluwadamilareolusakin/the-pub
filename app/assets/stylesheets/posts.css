@@ -1,3 +1,8 @@
+.timeline-left {
+  width: 35%; }
 
+.timeline-right {
+  width: 65%;
+  padding: 0 2em; }
 
 /*# sourceMappingURL=posts.css.map */
