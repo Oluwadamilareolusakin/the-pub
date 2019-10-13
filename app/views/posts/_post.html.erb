@@ -1,11 +1,14 @@
 <div class="post">
   <%= post.user.name %>
   <%= post.content %>
-  <div class="comments">
-    <%= link_to  fa_icon("chat"), new_post_comment_path(post) %>
-  </div>
-  <div class="likes row">
-    <%= post.likes.count %>
-    <%= link_to  fa_icon("heart"), post_likes_path(post), method: :post %>
+  <div class="post-actions row">
+    <div class="comments row post-action">
+      <%= post.comments.count %>
+      <%= link_to  fa_icon("comment-o"), new_post_comment_path(post) %>
+    </div>
+    <div class="likes row post-action">
+      <%= post.likes.count %>
+      <%= like_button(post) %>
+    </div>
   </div>
 </div>

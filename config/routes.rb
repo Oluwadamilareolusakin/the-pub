@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[ destroy create show] do
     resources :comments, module: :posts
-    resources :likes, module: :posts
+    resources :likes, module: :posts, only: %i[create index destroy]
   end
 
   get '/posts', to: 'posts#timeline'
