@@ -1,6 +1,7 @@
 <div class="post">
   <%= post.user.name %>
   <%= post.content %>
+  <%= post.likes.count %>
   <%= link_to  fa_icon("heart"), post_likes_path(post), method: :post %>
   <div class="post-comments">
     <% post.comments.each do |comment| %>
