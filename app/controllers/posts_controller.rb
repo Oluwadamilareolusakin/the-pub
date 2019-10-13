@@ -20,7 +20,6 @@ class PostsController < ApplicationController
   
   def timeline
     @posts = Post.all
-    @comment = Comment.new
   end
   
   def destroy

@@ -3,6 +3,12 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[destroy]
   before_action :authenticate_user!
+
+  def new
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+  end
+
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
