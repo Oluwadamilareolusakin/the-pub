@@ -9,16 +9,17 @@ class LikesController < ApplicationController
     @like.user = current_user
     @like.save
     flash[:success] = "You liked #{@likeable.user.name}'s #{@like.likeable_type.downcase}"
+    redirect_back_or_to root_path
   end
 
   def destroy
-    @like.destroy
+    current_user.unlike(@like)
     redirect_back_or_to root_path
   end
 
   private
 
-  def set_like
-    @like = Like.find(params[:id])
-  end
+    def set_like
+      @like = Like.where("likeable_id = ? AND user_id = ?", params[:post_id], params[:id])
+    end
 end

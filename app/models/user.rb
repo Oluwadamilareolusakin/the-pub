@@ -76,4 +76,13 @@ class User < ApplicationRecord
       requesters.delete(user)
     end
   end
+
+  def unlike(like)
+    return if !likes.include?(likes)
+    likes.delete(like)
+  end
+
+  def likes?(like)
+    likes.include?(like)
+  end
 end
