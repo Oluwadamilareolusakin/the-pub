@@ -84,7 +84,7 @@
   overflow-y: scroll;
   height: 100vh;
   width: 60%;
-  background-color: #dfdfdf; }
+  background-color: rgba(223, 223, 223, 0.68); }
   .timeline-center .posts {
     width: 80%;
     font-family: "Nunito", sans-serif; }
@@ -92,16 +92,20 @@
       margin-top: 2em;
       width: 100%; }
       .timeline-center .posts .post .post-user-details {
-        justify-content: center;
+        justify-content: flex-end;
+        align-items: flex-start;
         margin-left: .3em; }
-        .timeline-center .posts .post .post-user-details p, .timeline-center .posts .post .post-user-details span {
+        .timeline-center .posts .post .post-user-details p {
           font-size: .8em; }
         .timeline-center .posts .post .post-user-details span {
-          color: grey; }
+          color: grey;
+          font-size: .6em; }
       .timeline-center .posts .post .post-body {
         border-radius: 5px;
         padding: .4em 1em;
         background-color: white; }
+        .timeline-center .posts .post .post-body .post-text {
+          font-size: .8em; }
         .timeline-center .posts .post .post-body .post-actions .post-action {
           margin-right: 1em;
           font-size: .8em;
@@ -109,12 +113,12 @@
           .timeline-center .posts .post .post-body .post-actions .post-action .count {
             margin-right: .2em; }
       .timeline-center .posts .post .comment {
-        font-size: .8em; }
+        font-size: .6em; }
         .timeline-center .posts .post .comment input {
           border-radius: 5px;
           background-color: #eeeeee;
           border: none;
-          padding: .3em .4em; }
+          padding: .5em .4em; }
         .timeline-center .posts .post .comment input[type="text"] {
           width: 80%; }
 

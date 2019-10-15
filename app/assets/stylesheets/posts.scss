@@ -118,7 +118,7 @@
   overflow-y: scroll;
   height: 100vh;
   width: 60%;
-  background-color: rgb(223, 223, 223);
+  background-color: rgba(223, 223, 223, 0.68);
 
   .posts{
     width: 80%;
@@ -128,16 +128,18 @@
       width: 100%;
 
       .post-user-details{
-        justify-content: center;
+        justify-content: flex-end;
+        align-items: flex-start;
         margin-left: .3em;
      
         
-        p, span{
+        p{
           font-size: .8em;
         }
 
         span{
           color: grey;
+          font-size: .6em;
         }
       }
 
@@ -145,6 +147,10 @@
         border-radius: 5px;
         padding: .4em 1em;
         background-color: white;
+
+        .post-text{
+          font-size: .8em;
+        }
         .post-actions{
           .post-action{
             margin-right: 1em;
@@ -158,13 +164,13 @@
       }
 
       .comment{
-        font-size: .8em;
+        font-size: .6em;
 
         input{
           border-radius: 5px;
           background-color: $main-grey;
           border: none;
-          padding: .3em .4em;
+          padding: .5em .4em;
         }
         input[type="text"]{
           width: 80%;
