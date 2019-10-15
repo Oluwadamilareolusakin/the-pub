@@ -12,21 +12,45 @@
     </div>
 
     <hr>
-   <%= render  "stats" %>
-    <hr>
 
+    <%= render  "stats" %>
+    
+    <hr>
+    
     <div class="friend-requests-sent friend-requests">
       <div class="request-section-header row">
-        <%= render  "sent_requests" %>
+        <h3 class="requests-heading">YOUR FRIENDS</h3> 
+        <div class="view-all-link row">
+          <%= link_to  "VIEW ALL", friends_path%>
+        </div>
+      </div>
+      <%= render  partial: "user_list", locals: {users: @friends} %>
     </div>
+
+    <hr>
+      
+    <div class="friend-requests-sent friend-requests">
+      <div class="request-section-header row">
+          <h3 class="requests-heading">REQUESTS SENT</h3> 
+          <div class="view-all-link row">
+            <%= link_to  "VIEW ALL", requesteds_path%>
+          </div>
+      </div>
+      <%= render  partial: "user_list", locals: {users: @requesteds} %>
     </div>
 
     <hr>
     <div class="friend-requests-received friend-requests">
       <div class="request-section-header row">
-        <%= render  "received_requests" %>
+        <h3 class="requests-heading">REQUESTS RECEIVED</h3> 
+        <div class="view-all-link row">
+          <%= link_to  "VIEW ALL", requesters_path%>
+        </div>
       </div>
+      <%= render partial: "user_list", locals: {users: @requesters} %>
     </div>
+  </div>
+    
   <div class="timeline-center column">
     <div class="posts">
       <% @posts.each do |post|%>
@@ -36,6 +60,13 @@
   </div>
 
   <div class="timeline-right">
-     
+     <div class="friend-requests friend suggestions">
+       <div class="request-section-header row">
+         <h3 class="requests-heading">
+          FRIEND SUGGESTIONS
+         </h3>
+        </div>
+        <%= render  partial: "suggestions", locals: {suggestions: @suggestions} %>
+     </div>
   </div>
 </div>
