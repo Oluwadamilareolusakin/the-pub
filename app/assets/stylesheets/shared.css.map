@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAQ,mGAA2F;ACEnG,mBAAmB;EACjB,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,GAAG;;AAGZ,yBAAyB;EACvB,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,GAAG;;AAGZ,GAAG;EACD,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,KAAK;EACvB,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAE,CAAC;EACV,UAAU,EDqCM,kCAAiC;;AClCnD,sBAAsB;EACpB,OAAO,EAAE,IAAI",
+"sources": ["sphinx/sass/_component_styles.scss","shared.scss"],
 "names": [],
 "file": "shared.css"
 }

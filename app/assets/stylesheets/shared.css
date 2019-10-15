@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Be+Vietnam|Nunito|Raleway|Rubik&display=swap");
+::-webkit-scrollbar {
+  background-color: white;
+  width: 3px; }
 
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  width: 5px; }
+
+nav {
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 9;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163); }
+
+.dropdown-items.column {
+  display: none; }
 
 /*# sourceMappingURL=shared.css.map */

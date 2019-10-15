@@ -1,4 +1,23 @@
-.drop-down-items{
-  // width: 20%;
-  // height: 300px; 
+@import 'sphinx/sass/component_styles';
+
+::-webkit-scrollbar{
+  background-color: white;
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: grey;
+  width: 5px;
+}
+
+nav{
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 9;
+  box-shadow: $main-box-shadow;
+}
+
+.dropdown-items.column{
+  display: none;
 }

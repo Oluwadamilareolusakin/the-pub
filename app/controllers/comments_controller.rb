@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @comment = Comment.new
   end
 
@@ -15,10 +15,10 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:success] = 'Eyy, nice comment!'
       @commentable.notifications.create(receipient: @user, actor: current_user, action: 'commented on')
-      redirect_back_or_to root_path
+      redirect_back_or_to @commentable
     else
       flash[:notice] = 'Something seems to be wrong with your comment'
-      redirect_back_or_to root_path
+      render :new
     end
   end
 

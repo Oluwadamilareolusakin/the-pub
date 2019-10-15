@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_one_attached :avatar
+  has_one_attached :header
 
   # has_many
   has_many :posts, dependent: :destroy

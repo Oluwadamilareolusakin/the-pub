@@ -1,8 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Be+Vietnam|Nunito|Raleway|Rubik&display=swap");
+.timeline {
+  justify-content: center; }
+
 .timeline-left {
-  width: 35%; }
+  font-family: "Nunito", sans-serif;
+  width: 20%;
+  background-color: white;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+  align-self: flex-start;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3em 1em;
+  overflow-y: scroll; }
+  .timeline-left .user-details {
+    align-items: center;
+    justify-content: center; }
+    .timeline-left .user-details span {
+      font-size: .8em;
+      margin-left: .3em; }
+  .timeline-left .stats-section {
+    color: grey;
+    font-size: .7em; }
+  .timeline-left .post-creation-holder {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 1em;
+    background-color: white; }
+    .timeline-left .post-creation-holder form {
+      width: 100%;
+      flex-direction: column;
+      display: flex; }
+      .timeline-left .post-creation-holder form input[type="text"] {
+        width: 100%;
+        border-radius: 5px;
+        padding: .3em .5em;
+        background-color: #eeeeee;
+        border: none;
+        font-size: .8em; }
+      .timeline-left .post-creation-holder form input[type="submit"] {
+        padding: .2em 1em;
+        border: none;
+        border-radius: 5px;
+        background: 0 0;
+        color: white;
+        background-color: #00aeff;
+        transition: .25s;
+        margin-top: .5em;
+        font-size: .9em; }
+  .timeline-left .request-section-header {
+    font-size: .5em;
+    font-family: "Be Vietnam", sans-serif;
+    width: 100%;
+    justify-content: space-between; }
+    .timeline-left .request-section-header .view-all-link {
+      width: 50%;
+      justify-content: flex-end;
+      text-decoration: underline;
+      color: #00aeff; }
+
+.requests .user-card-avatar {
+  width: 40px;
+  height: 40px; }
+.requests a {
+  font-size: .7em; }
+.requests .request-user-info {
+  align-items: center; }
+.requests .placeholder-request {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: grey; }
+.requests p {
+  font-size: .7em; }
+
+.timeline-center {
+  padding: 3em 1em;
+  padding-top: 8em;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 60%;
+  background-color: #dfdfdf; }
+  .timeline-center .posts {
+    width: 80%;
+    font-family: "Nunito", sans-serif; }
+    .timeline-center .posts .post {
+      margin-top: 2em;
+      width: 100%; }
+      .timeline-center .posts .post .post-user-details {
+        justify-content: center;
+        margin-left: .3em; }
+        .timeline-center .posts .post .post-user-details p, .timeline-center .posts .post .post-user-details span {
+          font-size: .8em; }
+        .timeline-center .posts .post .post-user-details span {
+          color: grey; }
+      .timeline-center .posts .post .post-body {
+        border-radius: 5px;
+        padding: .4em 1em;
+        background-color: white; }
+        .timeline-center .posts .post .post-body .post-actions .post-action {
+          margin-right: 1em;
+          font-size: .8em;
+          color: grey; }
+          .timeline-center .posts .post .post-body .post-actions .post-action .count {
+            margin-right: .2em; }
+      .timeline-center .posts .post .comment {
+        font-size: .8em; }
+        .timeline-center .posts .post .comment input {
+          border-radius: 5px;
+          background-color: #eeeeee;
+          border: none;
+          padding: .3em .4em; }
+        .timeline-center .posts .post .comment input[type="text"] {
+          width: 80%; }
 
 .timeline-right {
-  width: 65%;
-  padding: 0 2em; }
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+  background-color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  padding: 3em 1em; }
+
+.user-card-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; }
 
 /*# sourceMappingURL=posts.css.map */

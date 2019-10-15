@@ -36,7 +36,8 @@ Rails.application.routes.draw do
   get '/friend_requests', to: 'users#friend_requests'
   get '/notifications', to: 'users#notifications'
   get '/profiles/:id', to: 'users#show', as: 'profile'
-  
+  get '/requesteds', to: 'user#requesteds'
+  get "/requesters", to: "users#requesters"
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

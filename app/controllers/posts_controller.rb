@@ -20,6 +20,9 @@ class PostsController < ApplicationController
   
   def timeline
     @posts = Post.all
+    @comment = Comment.new
+    @requesteds = current_user.requesteds.first(4)
+    @requesters = current_user.requesters.first(4)
   end
   
   def destroy

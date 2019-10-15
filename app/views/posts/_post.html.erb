@@ -1,14 +1,39 @@
-<div class="post">
-  <%= post.user.name %>
-  <%= post.content %>
-  <div class="post-actions row">
-    <div class="comments row post-action">
-      <%= post.comments.count %>
-      <%= link_to  fa_icon("comment-o"), new_post_comment_path(post) %>
+<div class="post column">
+  <div class="row">
+
+    <%= user_avatar(post.user) %>
+    <div class="column post-user-details">
+      <p>
+        <%= post.user.name %> 
+      </p>
+      <span class="post-created-at"><%= time_ago_in_words post.created_at %> </span>
     </div>
-    <div class="likes row post-action">
-      <%= post.likes.count %>
-      <%= like_button(post) %>
+  </div>
+  <div class="post-body">
+    <div class="post-text">
+      <p>
+        <%= post.content %>
+      </p>
+    </div>
+    <div class="post-actions row">
+      <div class="comments row post-action">
+        <span class="count">
+          <%= post.comments.count %>
+        </span>
+        <%= link_to  fa_icon("comment-o"), post_comments_path(post) %>
+      </div>
+      <div class="likes row post-action">
+        <span class="count">
+          <%= post.likes.count %>
+        </span>
+        <%= like_button(post) %>
+      </div>
+    </div>
+    <div class="comment">
+      <%= form_for [post, @comment] do |f| %>
+        <%= f.text_field :content, placeholder: 'Write a comment...' %>
+        <%= f.submit "Comment"%>
+      <% end %>
     </div>
   </div>
 </div>
