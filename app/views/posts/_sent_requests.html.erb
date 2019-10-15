@@ -1,0 +1,19 @@
+<h3 class="requests-heading">REQUESTS SENT</h3> 
+<div class="view-all-link row">
+  <%= link_to  "VIEW ALL", requesteds_path%>
+</div>
+</div>
+<div class="requests row justify-content-sb">
+<% if @requesteds.any?%>
+  <%@requesteds.each do |requested|%>
+  <div class="column request-user-info">
+    <%= user_avatar(requested)%>
+    <%= link_to requested.name.split(' ')[0], profile_path(requested)%>
+  </div>
+  <%end%>
+<%else%>
+<div class="placeholder-request">
+
+</div>
+  <p>No pending requests</p>
+<%end%>

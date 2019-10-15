@@ -8,78 +8,25 @@
     </div>
     
     <div class="post-creation-holder">
-        <%= form_for(current_user.posts.build) do |f| %>
-         <%= f.text_field :content, placeholder: 'Pub something...' %>
-         <%= f.submit "Pub"%>
-        <% end %>
+        <%= render  "form" %>
     </div>
 
     <hr>
-    <div class="stats-section">
-      <h3>YOUR STATS</h3>
-      <div class="user-stat">
-        <%= fa_icon "comment" %> Comments <%= current_user.comments.count %>
-      </div>
-      <div class="user-stat">
-        <%= fa_icon "heart" %> likes <%= current_user.likes.count %>
-      </div>
-      <div class="user-stat">
-        <%= fa_icon "comment" %> Pubs <%= current_user.posts.count %>
-      </div>
-    </div>
+   <%= render  "stats" %>
     <hr>
 
     <div class="friend-requests-sent friend-requests">
       <div class="request-section-header row">
-        <h3 class="requests-heading">REQUESTS SENT</h3> 
-        <div class="view-all-link row">
-          <%= link_to  "VIEW ALL", requesteds_path%>
-        </div>
-      </div>
-      <div class="requests row justify-content-sb">
-        <% if @requesteds.any?%>
-          <%@requesteds.each do |requested|%>
-          <div class="column request-user-info">
-            <%= user_avatar(requested)%>
-            <%= link_to requested.name.split(' ')[0], profile_path(requested)%>
-          </div>
-          <%end%>
-        <%else%>
-        <div class="placeholder-request">
-
-        </div>
-          <p>No pending requests</p>
-        <%end%>
-      </div>
+        <%= render  "sent_requests" %>
+    </div>
     </div>
 
     <hr>
     <div class="friend-requests-received friend-requests">
-        <div class="request-section-header row">
-          <h3 class="requests-heading">REQUESTS RECEIVED</h3> 
-          <div class="view-all-link row">
-            <%= link_to  "VIEW ALL", requesters_path%>
-          </div>
-        </div>
+      <div class="request-section-header row">
+        <%= render  "received_requests" %>
       </div>
-      <div class="requests row justify-content-sb">
-          <% if @requesters.any?%>
-            <%@requesters.each do |requester|%>
-            <div class="column request-user-info">
-              <%= user_avatar(requester)%>
-              <%= link_to requester.name.split(' ')[0], profile_path(requester)%>
-            </div>
-            <%end%>
-          <%else%>
-          <div class="column">
-            <div class="placeholder-request">
-    
-            </div>
-              <p>No pending requests</p>
-          </div>
-          <%end%>
-        </div>
-  </div>
+    </div>
   <div class="timeline-center column">
     <div class="posts">
       <% @posts.each do |post|%>

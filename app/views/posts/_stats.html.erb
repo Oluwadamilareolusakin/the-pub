@@ -1,0 +1,12 @@
+<div class="stats-section">
+  <h3>YOUR STATS</h3>
+  <div class="user-stat">
+    <%= fa_icon "comment" %> Comments <%= current_user.comments.count %>
+  </div>
+  <div class="user-stat">
+    <%= fa_icon "heart" %> likes <%= current_user.likes.count %>
+  </div>
+  <div class="user-stat">
+    <%= fa_icon "comment" %> Pubs <%= current_user.posts.count %>
+  </div>
+</div>
