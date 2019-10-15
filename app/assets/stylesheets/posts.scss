@@ -188,18 +188,73 @@
 
 .timeline-right{
   box-shadow: $main-box-shadow;
-  background-color: white;
+  background-color: rgb(253, 253, 253);
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   width: 20%;
+  overflow-y: scroll;
   padding: $section-padding;
   
+  .friend-requests{
+    font-family: $primary-font;
+    .requests-heading{
+      color: $main-accent;
+      font-size: .7em;
+    }
+    .suggestions{
+      width: 100%;
+      .suggestion{
+        font-size: .7em;
+        margin-top: .5em;
+        align-items: center;
+        img{
+          width: 60px;
+          height: 60px;
+        }
+        .column{
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: none;
+          margin-left: .2em;
+
+          width: 70%;
+          padding: 0;
+          p{
+            margin: 0;
+          }
+        }
+
+        .row{
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+
+
 }
 
 .user-card-avatar{
   border-radius: 50%;
   width: 50px;
   height: 50px;
+}
+
+%friendship-btn{
+  padding: 0em 1em;
+  border-radius: 30px;
+  color: white;
+  font-size: .8em;
+}
+
+.friendship-btn{
+  @extend %friendship-btn;
+  background-color: $main-accent;
+}
+
+.cancel-friendship{
+  @extend %friendship-btn;
+  background-color: salmon;
 }
