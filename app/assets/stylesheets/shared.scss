@@ -21,3 +21,16 @@ nav{
 .dropdown-items.column{
   display: none;
 }
+
+.alert{
+  z-index: 9;
+  position: fixed;
+  top: 40px;
+  right: 10px;
+  font-family: $aux-font;
+  font-size: .7em;
+  background-color: rgba(17, 17, 17, 0.714);
+  color: white;
+  border-radius: 50px;
+  padding: 1em;
+}

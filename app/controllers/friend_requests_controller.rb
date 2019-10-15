@@ -5,7 +5,7 @@ class FriendRequestsController < ApplicationController
     @user = User.find(params[:id])
     current_user.request_friendship_with(@user)
     friend_request = FriendRequest.find_by(requested: @user)
-    friend_request.notifications.create(receipient: current_user, actor: current_user, action: 'sent a')
+    friend_request.notifications.create(receipient: @user, actor: current_user, action: 'sent a')
 
     redirect_back_or_to root_path
   end
