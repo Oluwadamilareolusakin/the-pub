@@ -7,7 +7,7 @@ class Posts::CommentsController < CommentsController
     @post = Post.find(params[:post_id])
     @comments = @post.comments
   end
-  
+
   private
 
   def set_commentable

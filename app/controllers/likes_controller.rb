@@ -5,6 +5,7 @@ class LikesController < ApplicationController
 
   def create
     return if @likeable.likes.find_by(user: current_user)
+
     @like = @likeable.likes.build
     @like.user = current_user
     @like.save
@@ -19,7 +20,7 @@ class LikesController < ApplicationController
 
   private
 
-    def set_like
-      @like = Like.where("likeable_id = ? AND user_id = ?", params[:post_id], params[:id])
-    end
+  def set_like
+    @like = Like.where('likeable_id = ? AND user_id = ?', params[:post_id], params[:id])
+  end
 end

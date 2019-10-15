@@ -18,7 +18,7 @@ class User < ApplicationRecord
   has_many :received_notifications, through: :notifications, source: :receipient
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :trackable, 
+         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :trackable,
          omniauth_providers: %i[facebook github]
 
   # validationss
@@ -79,7 +79,8 @@ class User < ApplicationRecord
   end
 
   def unlike(like)
-    return if !likes.include?(likes)
+    return unless likes.include?(likes)
+
     likes.delete(like)
   end
 
