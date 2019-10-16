@@ -1,0 +1,614 @@
+@import 'reset';
+
+
+//Colors
+$light-grey:  rgb(233, 233, 233);
+
+//Breaking Points
+
+$small-bp: 48em; //small breaking point
+$medium-bp: 64em; //medium breaking point
+$large-bp: 85.375em; //large breaking point
+$xlarge-bp: 120em; //extra large breaking point
+$xxlarge-bp: 160em; //extra extra large breaking point
+
+//Media Queries
+
+$mq-small: "(max-width: #{$small-bp})";
+$mq-medium: "(min-width: #{$medium-bp})";
+$mq-large: "(min-width: #{$large-bp})";
+$mq-xlarge: "(min-width: #{$xlarge-bp})";
+$mq-xxlarge: "(min-width: #{$xxlarge-bp})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+//Column and Gutter width
+
+$base-gutter-width: .1em;
+$base-column-width: ($small-bp/12);
+
+//Font Size
+
+@mixin base-font-size($font-size) {
+    font-size: (1em * $font-size);
+}
+
+//Line Height
+
+$header-line-height: 1.25em;
+
+@mixin base-line-height($line-height) {
+    line-height: (1.5em * $line-height);
+}
+
+
+@mixin grid($span,$column-width,$gutter-width) {
+    width: ($column-width * $span) + ($gutter-width * ($span)); 
+    margin: $gutter-width;
+}
+
+@mixin clearfix{
+    &:before,&:after{
+        display: table;
+        content: "";
+    }
+
+    &:after{
+        clear: both;
+    }
+
+    &{
+        zoom: 1;
+    }
+}
+
+body{
+    @include base-font-size(1);
+    @include base-line-height(1);
+
+    h1{
+        line-height: $header-line-height;
+    }
+
+    
+    @media #{$mq-medium}{
+        @include base-font-size(1.2);
+        @include base-line-height(1.2);
+    }
+
+    @media #{$mq-large}{
+        @include base-font-size(1.3);
+    }
+
+    @media #{$mq-xlarge}{
+        @include base-font-size(1.4);
+    }
+
+    @media #{$mq-xxlarge}{
+        @include base-font-size(1.6);
+    }
+}
+
+.container{
+    margin: 1% 4%;
+    margin-bottom: 1%;
+
+    @media #{$mq-medium}{
+        margin: 0 8%;
+    }
+
+    @media #{$mq-large}{
+        margin: 0 12%;
+    }
+
+    @media #{$mq-xlarge}{
+        margin: 0 18%;
+    }
+    
+   
+}
+
+.section{
+    $column-width: $base-column-width;
+    $gutter-width: $base-gutter-width;
+    @include grid(12,$column-width,$gutter-width);
+    @include clearfix;
+
+    @media #{$mq-medium}{
+        $column-width: $medium-bp/12;
+    }
+
+    @media #{$mq-large} {
+        $gutter-width: $base-gutter-width * 1.2;
+        $column-width: $large-bp/12;
+    }
+
+    @media #{$mq-xlarge} {
+        $gutter-width: $base-gutter-width * 1.4;
+        $column-width: $xlarge-bp/12;
+    }
+
+    @media #{$mq-xxlarge}{
+        $gutter-width: $base-gutter-width * 1.6;
+        $column-width: $xxlarge-bp/12;
+    }
+}
+
+//Dividers
+%divider{
+    height: 1px;
+    background-color: $light-grey;
+    margin: 0 auto;
+}
+
+.full-divider{
+    @include grid(10,$base-column-width,$base-gutter-width);
+    @extend %divider;
+}
+
+.medium-divider{
+    @include grid(6, $base-column-width, $base-gutter-width);
+    @extend %divider;
+}
+
+.small-divider{
+    @include grid(3, $base-column-width, $base-gutter-width);
+    @extend %divider;
+}
+
+//Headers
+
+.header-full-width{
+    @include grid(12, $base-column-width, $base-gutter-width);
+    padding: .1em 1em;
+    margin: 0;
+}
+
+.header-spacer{
+    height: 2em;
+}
+
+.header-full-width-fixed{
+    @extend .header-full-width;
+    position: fixed;
+    z-index: 10;
+    background-color: $light-grey;
+    top: 0;
+}
+
+
+//Footers
+.footer-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $light-grey;
+}
+
+//Flex Row
+
+%row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.row{
+    @extend %row;
+    flex-wrap: nowrap;
+}
+
+.row-wrap{
+    @extend %row;
+    flex-wrap: wrap;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.justify-content-start{
+    justify-content: flex-start;
+}
+
+.justify-content-end{
+    justify-content: flex-end;
+}
+
+//Flex Column
+
+%column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.column{
+    @extend %column;
+}
+
+.align-items-center{
+    align-items: center;    
+}
+
+.align-items-start{
+    align-items: flex-start;
+}
+
+.align-items-end{
+    align-items: flex-end;
+}
+
+//Spans
+
+//Fixed width spans that scale proportionately to different screen sizes
+@mixin spans($span){
+    $column-width: $base-column-width;
+    $gutter-width: 0em;
+
+    @include grid($span,$column-width,$gutter-width);
+    
+    @media #{$mq-medium}{
+        $column-width: $medium-bp/12;
+    }
+
+    @media #{$mq-large} {
+        $gutter-width: $base-gutter-width * 1.2;
+        $column-width: $large-bp/12;
+    }
+
+    @media #{$mq-xlarge} {
+        $column-width: $xlarge-bp/12;
+    }
+
+    @media #{$mq-xxlarge}{
+        $gutter-width: $base-gutter-width * 1.6;
+        $column-width: $xxlarge-bp/12;
+    }
+    
+}
+
+.fw-1{
+    @include spans(1);
+    @include clearfix;
+}
+
+.fw-2{
+    @include spans(2);
+    @include clearfix;
+}
+
+.fw-3{
+    @include spans(3);
+    @include clearfix;
+}
+
+.fw-4{
+    @include spans(4);
+    @include clearfix;
+}
+
+.fw-5{
+    @include spans(5);
+    @include clearfix;
+}
+
+.fw-6{
+    @include spans(6);
+    @include clearfix;
+}
+
+.fw-8{
+    @include spans(8);
+    @include clearfix;
+}
+
+.fw-9{
+    @include spans(9);
+    @include clearfix;
+}
+
+.fw-10{
+    @include spans(10);
+    @include clearfix;
+}
+
+.fw-11{
+    @include spans(11);
+    @include clearfix;
+}
+
+.fw-12{
+    @include spans(12);
+    @include clearfix;
+}
+
+
+@media #{$mq-small}{
+    @mixin  col-xs($span) {
+        $column-width: $base-column-width;
+        $gutter-width: $base-gutter-width;
+        @include grid($span,$column-width,$gutter-width);
+    }
+    .col-xs-1{
+            @include col-xs(1);
+        }
+        
+        .col-xs-2{
+            @include col-xs(2);
+        }
+        
+        .col-xs-3{
+            @include col-xs(3);
+        }
+        
+        .col-xs-4{
+            @include col-xs(4);
+        }
+        
+        .col-xs-5{
+            @include col-xs(5);
+        }
+        
+        .col-xs-6{
+            @include col-xs(6);
+        }
+        
+        .col-xs-7{
+            @include col-xs(7);
+        }
+        
+        .col-xs-8{
+            @include col-xs(8);
+        }
+        
+        .col-xs-9{
+            @include col-xs(9);
+        }
+        
+        .col-xs-10{
+            @include col-xs(10);
+        }
+        
+        .col-xs-11{
+            @include col-xs(11);
+        }
+        
+        .col-xs-12{
+            @include col-xs(12);
+        }
+    }
+
+
+
+//Variable width columns with gutters
+
+@media #{$mq-medium}{
+
+    @mixin  col-ms($span) {
+        $column-width: $medium-bp/12;
+        $gutter-width: $base-gutter-width;
+        @include grid($span,$column-width,$gutter-width);
+    }
+    
+    .col-ms-1{
+        @include col-ms(1);
+    }
+    
+    .col-ms-2{
+        @include col-ms(2);
+    }
+    
+    .col-ms-3{
+        @include col-ms(3);
+    }
+    
+    .col-ms-4{
+        @include col-ms(4);
+    }
+    
+    .col-ms-5{
+        @include col-ms(5);
+    }
+    
+    .col-ms-6{
+        @include col-ms(6);
+    }
+    
+    .col-ms-7{
+        @include col-ms(7);
+    }
+    
+    .col-ms-8{
+        @include col-ms(8);
+    }
+    
+    .col-ms-9{
+        @include col-ms(9);
+    }
+    
+    .col-ms-10{
+        @include col-ms(10);
+    }
+    
+    .col-ms-11{
+        @include col-ms(11);
+    }
+    
+    .col-ms-12{
+        @include col-ms(12);
+    }
+}
+
+
+@media #{$mq-large}{
+
+    @mixin  col-ls($span) {
+        $column-width: $large-bp/12;
+        $gutter-width: $base-gutter-width * 1.4;
+        @include grid($span,$column-width,$gutter-width);
+    }
+    
+    .col-ls-1{
+        @include col-ls(1);
+    }
+    
+    .col-ls-2{
+        @include col-ls(2);
+    }
+    
+    .col-ls-3{
+        @include col-ls(3);
+    }
+    
+    .col-ls-4{
+        @include col-ls(4);
+    }
+    
+    .col-ls-5{
+        @include col-ls(5);
+    }
+    
+    .col-ls-6{
+        @include col-ls(6);
+    }
+    
+    .col-ls-7{
+        @include col-ls(7);
+    }
+    
+    .col-ls-8{
+        @include col-ls(8);
+    }
+    
+    .col-ls-9{
+        @include col-ls(9);
+    }
+    
+    .col-ls-10{
+        @include col-ls(10);
+    }
+    
+    .col-ls-11{
+        @include col-ls(11);
+    }
+    
+    .col-ls-12{
+        @include col-ls(12);
+    }
+}
+
+@media #{$mq-xlarge}{
+
+    @mixin  col-xls($span) {
+        $column-width: $xlarge-bp/12;
+        $gutter-width: $base-gutter-width * 1.6;
+        @include grid($span,$column-width,$gutter-width);
+    }
+    
+    .col-xls-1{
+        @include col-xls(1);
+    }
+    
+    .col-xls-2{
+        @include col-xls(2);
+    }
+    
+    .col-xls-3{
+        @include col-xls(3);
+    }
+    
+    .col-xls-4{
+        @include col-xls(4);
+    }
+    
+    .col-xls-5{
+        @include col-xls(5);
+    }
+    
+    .col-xls-6{
+        @include col-xls(6);
+    }
+    
+    .col-xls-7{
+        @include col-xls(7);
+    }
+    
+    .col-xls-8{
+        @include col-xls(8);
+    }
+    
+    .col-xls-9{
+        @include col-xls(9);
+    }
+    
+    .col-xls-10{
+        @include col-xls(10);
+    }
+    
+    .col-xls-11{
+        @include col-xls(11);
+    }
+    
+    .col-xls-12{
+        @include col-xls(12);
+    }
+}
+
+
+@media #{$mq-xxlarge}{
+
+    @mixin  col-xxls($span) {
+        $column-width: $xxlarge-bp/12;
+        $gutter-width: $base-gutter-width * 1.8;
+        @include grid($span,$column-width,$gutter-width);
+    }
+    
+    .col-xxls-1{
+        @include col-xxls(1);
+    }
+    
+    .col-xxls-2{
+        @include col-xxls(2);
+    }
+    
+    .col-xxls-3{
+        @include col-xxls(3);
+    }
+    
+    .col-xxls-4{
+        @include col-xxls(4);
+    }
+    
+    .col-xxls-5{
+        @include col-xxls(5);
+    }
+    
+    .col-xxls-6{
+        @include col-xxls(6);
+    }
+    
+    .col-xxls-7{
+        @include col-xxls(7);
+    }
+    
+    .col-xxls-8{
+        @include col-xxls(8);
+    }
+    
+    .col-xxls-9{
+        @include col-xxls(9);
+    }
+    
+    .col-xxls-10{
+        @include col-xxls(10);
+    }
+    
+    .col-xxls-11{
+        @include col-xxls(11);
+    }
+    
+    .col-xxls-12{
+        @include col-xxls(12);
+    }
+}

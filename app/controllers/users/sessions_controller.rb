@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  before_action :configure_sign_in_params, only: [:create]
+  before_action :protect_against_forgery?
   before_action :authenticate_user!
+  before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   def new
@@ -27,7 +28,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def after_sign_in_path_for(_resource)
-    dashboard_path
+    profile_path(current_user)
   end
 
   def after_sign_out_path_for(_resource)

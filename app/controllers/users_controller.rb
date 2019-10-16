@@ -1,22 +1,18 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_user
+  before_action :authenticate_user!
 
-  def index
-    @users = User.all
+  def show
+    @user = User.find(params[:id])
   end
-
-  def show; end
 
   def friends; end
 
   def friend_requests; end
 
   def notifications; end
-
-  def timeline; end
 
   private
 

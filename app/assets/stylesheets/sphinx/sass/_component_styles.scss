@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam|Nunito|Raleway|Rubik&display=swap');
+
+//Breaking Points
+
+$small-bp: 48em; //small breaking point
+$ls-small-bp: 50.750em;
+$xmedium-bp: 52em;
+$medium-bp: 64em; //medium breaking point
+$large-bp: 85.375em; //large breaking point
+$xlarge-bp: 119em; //extra large breaking point
+$xxlarge-bp: 160em; //extra extra large breaking point
+
+//Media Queries
+//Mixes
+$mq-mix-small: "(min-width: #{$small-bp}) and (max-width: #{$medium-bp})";
+$mq-mix-medium: "(min-width: #{$medium-bp}) and (max-width: #{$large-bp})";
+$mq-mix-large: "(min-width: #{$large-bp}) and (max-width: #{$xlarge-bp})";
+$mq-mix-xlarge: "(min-width: #{$xlarge-bp}) and (max-width: #{$xxlarge-bp})";
+
+
+//landscape
+$mq-ls-small: "(min-width: #{$ls-small-bp})"; 
+
+
+//Pure
+$mq-small: "(min-width: #{$small-bp})"; 
+$mq-medium: "(min-width: #{$medium-bp})"; 
+$mq-large: "(min-width: #{$large-bp})"; 
+$mq-xlarge: "(min-width: #{$xlarge-bp})"; 
+$mq-xxlarge: "(min-width: #{$xxlarge-bp})"; 
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+
+//Column and Gutter width
+$base-gutter-width: .1em;
+$base-column-width: ($small-bp/24);
+
+//Colors
+$light-grey:  #f5f5f5f6;
+$main-accent: rgb(0, 174, 255);
+$aux-accent: rgb(35, 35, 35);
+$primary-color: rgb(0, 59, 141);
+$secondary-black:rgb(24, 24, 24);
+
+//Fonts
+
+@mixin base-font-size($font-size) {
+    font-size: (1em * $font-size);
+}
+
+$main-bg-color: teal;
+$primary-grey: rgb(160, 160, 160);
+
+// $primary-font: 'Montserrat', sans-serif;
+$primary-font: 'Be Vietnam', sans-serif;
+
+$secondary-font: 'Rubik', sans-serif;
+// $aux-font: 'Share Tech Mono', monospace;
+$aux-font: 'Nunito', sans-serif;
+
+$medium-paragraph-font-size: 3em;
+$small-paragraph-font-size: 2.4em;
+$large-paragraph-font: 1.8em;
+
+//Line Height
+
+$header-line-height: 1.25em;
+$paragraph-line-height: 1.2em;
+
+@mixin base-line-height($line-height) {
+    line-height: (1.5em * $line-height);
+}
+
+$section-padding: 0em 0 0 7em;
+
+$btn-padding: .8em 1em;
+$btn-font-size: 2.9em; 
+$btn-border-radius: .2em;
+$mid-btn-font-size: 1em;
+$mid-btn-padding: .4em 1em;
+
+%btn-with-bg{
+    font-size: 1em;
+    padding: $btn-padding;
+    border-radius: $btn-border-radius;
+    @media #{$mq-medium}{
+        font-size: 1.5em;
+    }
+}
+
