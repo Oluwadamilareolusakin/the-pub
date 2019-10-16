@@ -13,6 +13,11 @@ class Notifications
     )
 
   handleSuccess: (data) =>
+    if data.nil?
+      @text = "<p>No new notifications</p>"
+      $("[data-behaviour='notification-items']").html(@text)
+      return
+
     items = $.map data, (notification) ->
       "<a class = 'dropdown-item' href=#{notification.url}>#{notification.actor} #{notification.action} #{notification.action_receipient}</a>"
 
@@ -30,6 +35,8 @@ class Notifications
       success: ->
         $("[data-behaviour='unread-count']").text(0)
     )
+    $("[data-behaviour = 'notification-items']").toggle()
+
 
 jQuery ->
 

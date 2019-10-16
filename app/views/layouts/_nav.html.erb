@@ -1,4 +1,10 @@
-<nav class="navigation">
+<nav class="navigation row">
+  <div class="search-bar">
+    <%= form_for(:search, url: new_search_path) do |f| %>
+      <%= f.text_field :search, placeholder: raw("Search &#xf002;"), style: "font-family: 'FontAwesome';" %>
+      <%= f.submit 'Search'%>
+    <% end %>
+  </div>
   <div class="notifications-dropdown dropdown-menu" data-behaviour = "notifications">
     <i data-behaviour="notifications-btn" type="button">
       <%= fa_icon 'bell', class: 'notifications-icon' %> <span data-behaviour="unread-count"></span>

@@ -16,10 +16,40 @@ nav{
   position: absolute;
   z-index: 9;
   box-shadow: $main-box-shadow;
-}
+  justify-content: space-between; 
+  
+  .search-bar{
+    width: 30%;
+  }
 
-.dropdown-items.column{
-  display: none;
+  form{
+    width: 80%;
+    display: flex;
+    font-family: $aux-font;
+    flex-flow: row nowrap;
+  }
+
+  input[type = "text"]{
+    width: 100%;
+    font-size: .7em;
+    border: none;
+    padding: 0 .6em;
+    margin-right: .5em;
+    border-bottom: 1.5px solid $main-accent;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  input[type = "submit"]{
+    background-color: $main-accent;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: .7em;
+    padding: .2em 1em;
+  }
 }
 
 .alert{
@@ -33,4 +63,21 @@ nav{
   color: white;
   border-radius: 50px;
   padding: 1em;
+}
+
+.notifications-icon{
+  color: slategray;
+}
+
+
+.dropdown-items{
+  display: none;
+  width: 30%;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+.open-drop-down{
+  display: flex;
 }
