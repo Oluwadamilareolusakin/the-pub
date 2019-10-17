@@ -13,6 +13,8 @@
   color: #00aeff; }
   .logo a {
     text-decoration: none; }
+    .logo a:hover {
+      text-decoration: none; }
 
 nav {
   width: 100%;
@@ -27,6 +29,12 @@ nav {
     justify-content: space-between; }
   nav .search-bar {
     width: 60%; }
+  nav .nav-btn {
+    margin-right: 1.5em;
+    font-family: "Nunito", sans-serif;
+    font-size: .8em; }
+  nav .sign-out-btn {
+    color: salmon; }
   nav form {
     width: 80%;
     display: flex;
@@ -69,7 +77,7 @@ nav {
   font-size: .8em; }
 
 .notifications-icon {
-  color: slategray; }
+  color: #00aeff; }
 
 div.dropdown-items {
   display: none;

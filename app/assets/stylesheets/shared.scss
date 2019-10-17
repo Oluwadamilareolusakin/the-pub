@@ -17,6 +17,10 @@
 
   a{
     text-decoration: none;
+    
+      &:hover{
+        text-decoration: none;
+      }
   }
 }
 nav{
@@ -35,6 +39,16 @@ nav{
   }
   .search-bar{
     width: 60%;
+  }
+
+  .nav-btn{
+    margin-right: 1.5em;
+    font-family: $aux-font;
+    font-size: .8em;
+  }
+
+  .sign-out-btn{
+    color: salmon;
   }
 
   form{
@@ -90,7 +104,7 @@ nav{
 }
 
 .notifications-icon{
-  color: slategray;
+  color: $main-accent;
 }
 
 

@@ -12,11 +12,8 @@
       </div>
       <div class="nav-btns row">
         <% if current_user %>
-          <%= link_to  "Sign out", sign_out_path, class: 'nav-btn' %>
-          <%= link_to  "Profile", profile_path(current_user), 'nav-btn' %>
-        <% end %>
-        
-        <div class="notifications-dropdown dropdown-menu" data-behaviour = "notifications">
+        <%= link_to  "Profile", profile_path(current_user), class: 'nav-btn' %>
+        <div class="notifications-dropdown dropdown-menu nav-btn" data-behaviour = "notifications">
           <i data-behaviour="notifications-btn" type="button" class="notifications-btn">
             <%= fa_icon 'bell', class: 'notifications-icon' %> <span class="unread-count" data-behaviour="unread-count"></span>
           </i>
@@ -24,6 +21,9 @@
             
           </div>
         </div>
+          <%= link_to  "Sign out", sign_out_path, class: 'nav-btn sign-out-btn' %>
+        <% end %>
+        
       </div>
     </div>
   </nav>
