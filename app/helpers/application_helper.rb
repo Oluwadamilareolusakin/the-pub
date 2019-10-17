@@ -19,4 +19,10 @@ module ApplicationHelper
       link_to 'Unfriend', friendship_path(id: user), method: :delete, class: 'cancel-friendship'
     end
   end
+
+  def pending_notifications
+    @notifications = Notification.where(receipient: current_user).unread
+    return if @notifications.any?
+    "No pending notifications"
+  end
 end
