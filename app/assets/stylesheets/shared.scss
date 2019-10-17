@@ -14,12 +14,22 @@ nav{
   width: 100%;
   background-color: white;
   position: absolute;
+  padding: .3em 1.3em;
   z-index: 9;
   box-shadow: $main-box-shadow;
   justify-content: space-between; 
+
+  .logo{
+    font-size: .8em;
+    font-family: $logo-font;
+  }
   
+  .nav-right{
+    width: 65%;
+    justify-content: space-between;
+  }
   .search-bar{
-    width: 30%;
+    width: 60%;
   }
 
   form{
@@ -56,13 +66,22 @@ nav{
   z-index: 9;
   position: fixed;
   top: 40px;
-  right: 10px;
+  right: 15px;
   font-family: $aux-font;
   font-size: .7em;
   background-color: rgba(17, 17, 17, 0.714);
   color: white;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 1em;
+  transition: 5s;
+}
+
+.close-toast{
+  opacity: 0;
+}
+
+.notifications-btn{
+  font-size: .8em;
 }
 
 .notifications-icon{
@@ -70,14 +89,23 @@ nav{
 }
 
 
-.dropdown-items{
+div.dropdown-items{
   display: none;
-  width: 30%;
+  width: 20%;
   background-color: white;
   position: absolute;
-  top: 50px;
+  top: 40px;
   right: 50px;
+  font-family: $secondary-font;
+  font-size: .5em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: $main-box-shadow;
+  text-align: center;
 }
-.open-drop-down{
+
+
+div.open-dropdown{
+  flex-direction: column; 
   display: flex;
 }
