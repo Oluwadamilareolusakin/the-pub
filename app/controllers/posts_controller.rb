@@ -8,6 +8,12 @@ class PostsController < ApplicationController
   def show; end
 
   def create
+    if params[:post][:content].empty?
+      flash[:notice] = "Nice try! Type something before you Pub"
+      redirect_back_or_to root_path
+      return
+    end
+    
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:notice] = 'Which came first? The pub or the post :)'
