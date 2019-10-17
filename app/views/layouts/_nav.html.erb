@@ -1,23 +1,30 @@
-<nav class="navigation row">
-  <div class="logo">
-    <p>
-      The Pub 
-    </p>
-  </div>
-  <div class="nav-right row">
-    <div class="search-bar">
-      <%= form_for(:search, url: new_search_path) do |f| %>
-        <%= f.text_field :search, placeholder: raw("Search &#xf002;"), style: "font-family: 'FontAwesome';" %>
-        <%= f.submit 'Search'%>
-      <% end %>
+<% if controller_name != 'sessions' && controller_name != 'registrations' && controller_name != 'passwords' && controller_name != 'confirmations' %>
+  <nav class="navigation row">
+    <div class="logo">
+      <%= link_to  "The Pub", root_path %>
     </div>
-    <div class="notifications-dropdown dropdown-menu" data-behaviour = "notifications">
-      <i data-behaviour="notifications-btn" type="button" class="notifications-btn">
-        <%= fa_icon 'bell', class: 'notifications-icon' %> <span class="unread-count" data-behaviour="unread-count"></span>
-      </i>
-      <div class="dropdown-items" data-behaviour="notification-items">
-         
+    <div class="nav-right row">
+      <div class="search-bar">
+        <%= form_for(:search, url: new_search_path) do |f| %>
+          <%= f.text_field :search, placeholder: raw("Search &#xf002;"), style: "font-family: 'FontAwesome';" %>
+          <%= f.submit 'Search'%>
+        <% end %>
+      </div>
+      <div class="nav-btns row">
+        <% if current_user %>
+          <%= link_to  "Sign out", sign_out_path, class: 'nav-btn' %>
+          <%= link_to  "Profile", profile_path(current_user), 'nav-btn' %>
+        <% end %>
+        
+        <div class="notifications-dropdown dropdown-menu" data-behaviour = "notifications">
+          <i data-behaviour="notifications-btn" type="button" class="notifications-btn">
+            <%= fa_icon 'bell', class: 'notifications-icon' %> <span class="unread-count" data-behaviour="unread-count"></span>
+          </i>
+          <div class="dropdown-items" data-behaviour="notification-items">
+            
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+<% end %>

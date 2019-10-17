@@ -1,6 +1,6 @@
 <% if users.any? %>
-  <%= users.each do |user| %>
-    <div class="user">
+  <% users.each do |user| %>
+    <div class="user column">
       <div class="user-card-header">
         <div class="user-avatar">
           <%= user_avatar(user) %>
@@ -15,7 +15,7 @@
     </div>
   <% end %>
 <% else %>
-    <div class="no-users-center">
+    <div class="no-users-center row">
       <h3>You currently have no <%= "#{object}" %></h3>
     </div>
 <% end %>
