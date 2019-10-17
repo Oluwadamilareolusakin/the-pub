@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       flash[:success] = 'Eyy, nice comment!'
-      @commentable.notifications.create(receipient: current_user, actor: current_user, action: 'commented on')
+      @commentable.notifications.create(receipient: @user, actor: current_user, action: 'commented on')
       redirect_back_or_to @commentable
     else
       flash[:notice] = 'Something seems to be wrong with your comment'
