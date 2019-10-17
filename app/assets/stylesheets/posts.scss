@@ -115,8 +115,7 @@
   }
 }
 .timeline-center{
-  padding: 8em 1em 0 1em;
-  padding-top: 8em;
+  padding: 32em 1em 4em 1em;
   align-self: flex-start;  
   align-items: center;
   overflow: hidden;
@@ -208,7 +207,7 @@
       .suggestion{
         font-size: .7em;
         margin-top: .5em;
-        align-items: center;
+        align-items: flex-start;
         img{
           width: 60px;
           height: 60px;
@@ -218,7 +217,6 @@
           align-items: flex-start;
           margin: none;
           margin-left: .2em;
-
           width: 70%;
           padding: 0;
           p{
@@ -228,6 +226,7 @@
 
         .row{
           align-items: flex-start;
+          justify-content: flex-start;
         }
       }
     }
@@ -243,7 +242,7 @@
 }
 
 %friendship-btn{
-  padding: 0em 1em;
+  padding: 1em 1em;
   border-radius: 30px;
   color: white;
   font-size: .8em;

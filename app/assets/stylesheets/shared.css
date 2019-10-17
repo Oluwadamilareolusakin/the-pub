@@ -7,6 +7,13 @@
   background-color: grey;
   width: 5px; }
 
+.logo {
+  font-size: 1.5em;
+  font-family: "Baloo Bhai", cursive;
+  color: #00aeff; }
+  .logo a {
+    text-decoration: none; }
+
 nav {
   width: 100%;
   background-color: white;
@@ -15,9 +22,6 @@ nav {
   z-index: 9;
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
   justify-content: space-between; }
-  nav .logo {
-    font-size: .8em;
-    font-family: "Baloo Bhai", cursive; }
   nav .nav-right {
     width: 65%;
     justify-content: space-between; }
@@ -84,5 +88,89 @@ div.dropdown-items {
 div.open-dropdown {
   flex-direction: column;
   display: flex; }
+
+.no-users-center {
+  height: 50vh;
+  font-family: "Nunito", sans-serif;
+  color: #00aeff;
+  justify-content: center;
+  align-items: center; }
+
+.users-section-heading {
+  font-family: "Be Vietnam", sans-serif;
+  font-size: 2em;
+  padding: 3em 0 1em 0;
+  text-align: center; }
+
+.users {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center; }
+  .users .user {
+    width: 25%;
+    height: 300px;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+    border-radius: 5px;
+    margin-right: 1em;
+    margin-bottom: 1em; }
+    .users .user .user-card-header {
+      padding: 1em 0;
+      width: 100%;
+      height: 100px;
+      background-color: #00aeff; }
+      .users .user .user-card-header .user-avatar {
+        position: absolute;
+        left: 29%; }
+        .users .user .user-card-header .user-avatar .user-card-avatar {
+          border: 4px solid white;
+          width: 150px;
+          height: 150px; }
+    .users .user .user-card-body {
+      padding: 4em 0 0 0;
+      height: 200px;
+      text-align: center; }
+      .users .user .user-card-body .cancel-friendship, .users .user .user-card-body .friendship-btn {
+        margin-top: 2em; }
+
+.create-form {
+  width: 35%;
+  margin: auto;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-start; }
+  .create-form .logo {
+    width: 100%; }
+    .create-form .logo p {
+      text-align: center; }
+  .create-form h2.form-title {
+    text-align: center;
+    width: 100%;
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 1.2em;
+    color: grey; }
+  .create-form form {
+    width: 100%;
+    font-family: "Be Vietnam", sans-serif; }
+    .create-form form .field label, .create-form form em {
+      font-size: .8em; }
+    .create-form form input[type="email"], .create-form form input[type="text"], .create-form form input[type="password"], .create-form form input[type="submit"] {
+      padding: .4em 0 .5em .3em;
+      width: 100%;
+      border: none;
+      box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+      border-radius: 5px; }
+    .create-form form input[type="submit"] {
+      margin-top: 1em;
+      transition: .25s; }
+      .create-form form input[type="submit"]:hover {
+        color: white;
+        background-color: #00aeff; }
+  .create-form .shared-links {
+    justify-content: flex-start;
+    align-items: flex-start; }
 
 /*# sourceMappingURL=shared.css.map */
