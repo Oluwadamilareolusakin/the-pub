@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :search
+
   
   
   get '/friends', to: 'users#friends'

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Be+Vietnam|Nunito|Raleway|Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhai|Be+Vietnam|Nunito|Raleway|Rubik&display=swap");
 ::-webkit-scrollbar {
   background-color: white;
   width: 3px; }
@@ -11,22 +11,78 @@ nav {
   width: 100%;
   background-color: white;
   position: absolute;
+  padding: .3em 1.3em;
   z-index: 9;
-  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163); }
-
-.dropdown-items.column {
-  display: none; }
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+  justify-content: space-between; }
+  nav .logo {
+    font-size: .8em;
+    font-family: "Baloo Bhai", cursive; }
+  nav .nav-right {
+    width: 65%;
+    justify-content: space-between; }
+  nav .search-bar {
+    width: 60%; }
+  nav form {
+    width: 80%;
+    display: flex;
+    font-family: "Nunito", sans-serif;
+    flex-flow: row nowrap; }
+  nav input[type="text"] {
+    width: 100%;
+    font-size: .7em;
+    border: none;
+    padding: 0 .6em;
+    margin-right: .5em;
+    border-bottom: 1.5px solid #00aeff; }
+    nav input[type="text"]:focus {
+      outline: none; }
+  nav input[type="submit"] {
+    background-color: #00aeff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: .7em;
+    padding: .2em 1em; }
 
 .alert {
   z-index: 9;
   position: fixed;
   top: 40px;
-  right: 10px;
+  right: 15px;
   font-family: "Nunito", sans-serif;
   font-size: .7em;
   background-color: rgba(17, 17, 17, 0.714);
   color: white;
-  border-radius: 50px;
-  padding: 1em; }
+  border-radius: 5px;
+  padding: 1em;
+  transition: 5s; }
+
+.close-toast {
+  opacity: 0; }
+
+.notifications-btn {
+  font-size: .8em; }
+
+.notifications-icon {
+  color: slategray; }
+
+div.dropdown-items {
+  display: none;
+  width: 20%;
+  background-color: white;
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  font-family: "Rubik", sans-serif;
+  font-size: .5em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+  text-align: center; }
+
+div.open-dropdown {
+  flex-direction: column;
+  display: flex; }
 
 /*# sourceMappingURL=shared.css.map */

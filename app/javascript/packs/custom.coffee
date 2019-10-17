@@ -14,10 +14,16 @@ class Notifications
 
   handleSuccess: (data) =>
     items = $.map data, (notification) ->
-      "<a class = 'dropdown-item' href=#{notification.url}>#{notification.actor} #{notification.action} #{notification.action_receipient}</a>"
+      "<a class = 'dropdown-item' href=#{notification.url}>#{notification.actor} #{notification.action} #{notification.action_receipient}</a> <hr>"
 
     $("[data-behaviour='unread-count']").text(items.length)
+    if items.length == 0
+      @empty = "<p>No notifications for you</p>"
+      $("[data-behaviour='notification-items']").html(@empty) 
+      return
+      
     $("[data-behaviour='notification-items']").html(items)
+
 
   handleClick: (e) =>
     $.ajax(
@@ -29,8 +35,27 @@ class Notifications
       },
       success: ->
         $("[data-behaviour='unread-count']").text(0)
+        $("[data-behaviour = 'notification-items']").toggleClass('open-dropdown')
     )
+
+
+class Toast
+  constructor: ->
+    @toast = $("[data-behaviour = 'toast']")
+    @closeToast(0) if @toast.length > 0
+
+  closeToast: (count) =>
+    while count <= 1000000000
+      count += 1
+    
+    if count >= 1000000000
+      @toast.toggleClass('close-toast') 
+
 
 jQuery ->
 
   new Notifications
+
+jQuery ->
+
+  new Toast

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Be+Vietnam|Nunito|Raleway|Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Be+Vietnam|Nunito|Raleway|Rubik&display=swap');
 
 //Breaking Points
 
@@ -58,7 +58,7 @@ $main-box-shadow: 0 0 5px .5px rgba(0, 0, 0, 0.163);
 $primary-font: 'Be Vietnam', sans-serif;
 
 $secondary-font: 'Rubik', sans-serif;
-// $aux-font: 'Share Tech Mono', monospace;
+$logo-font: 'Baloo Bhai', cursive;
 $aux-font: 'Nunito', sans-serif;
 
 $medium-paragraph-font-size: 3em;
@@ -74,7 +74,7 @@ $paragraph-line-height: 1.2em;
     line-height: (1.5em * $line-height);
 }
 
-$section-padding: 3em 1em;
+$section-padding: 4em 1em;
 
 $btn-padding: .8em 1em;
 $btn-font-size: 2.9em; 
