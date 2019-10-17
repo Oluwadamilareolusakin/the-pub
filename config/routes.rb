@@ -34,12 +34,12 @@ Rails.application.routes.draw do
 
   
   
-  get '/friends', to: 'users#friends'
+  get '/friends', to: 'friendships#index'
   get '/friend_requests', to: 'users#friend_requests'
   get '/notifications', to: 'users#notifications'
   get '/profiles/:id', to: 'users#show', as: 'profile'
-  get '/requesteds', to: 'user#requesteds'
-  get "/requesters", to: "users#requesters"
+  get '/requesteds', to: 'friend_requests#requesteds'
+  get "/requesters", to: "friend_requests#requesters"
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

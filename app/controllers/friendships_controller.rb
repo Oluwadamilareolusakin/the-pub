@@ -3,6 +3,10 @@
 class FriendshipsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @friends = current_user.friends
+  end
+
   def create
     @user = User.find(params[:id])
     current_user.remove_friend_request_with(@user)

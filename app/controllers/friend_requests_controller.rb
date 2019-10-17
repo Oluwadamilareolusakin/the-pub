@@ -16,4 +16,12 @@ class FriendRequestsController < ApplicationController
     flash[:success] = 'Request deleted successfully'
     redirect_back_or_to root_path
   end
+
+  def requesters
+    @requesters = current_user.requesters    
+  end
+
+  def requesteds
+    @requesteds = current_user.requesteds
+  end
 end

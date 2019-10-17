@@ -1,0 +1,21 @@
+<% if users.any? %>
+  <%= users.each do |user| %>
+    <div class="user">
+      <div class="user-card-header">
+        <div class="user-avatar">
+          <%= user_avatar(user) %>
+        </div>
+      </div>
+      <div class="user-card-body">
+        <h3>
+          <%= user.name %>
+        </h3>
+        <%= friendship_button(user) %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+    <div class="no-users-center">
+      <h3>You currently have no <%= "#{object}" %></h3>
+    </div>
+<% end %>
