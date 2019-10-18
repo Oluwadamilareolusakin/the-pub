@@ -11,3 +11,4 @@ files:
     - "app/controllers/*"
     - 'spec/*'
     - 'app/models/*'
+    - 'app/helpers/app*'
