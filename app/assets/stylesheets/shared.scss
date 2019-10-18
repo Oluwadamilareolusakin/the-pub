@@ -26,10 +26,10 @@
 nav{
   width: 100%;
   background-color: white;
-  position: absolute;
   padding: .3em 1.3em;
-  z-index: 9;
   box-shadow: $main-box-shadow;
+  position: relative;
+  z-index: 8;
   justify-content: space-between; 
 
   
@@ -56,12 +56,13 @@ nav{
   padding: 1em 6em;
   box-shadow: $main-box-shadow;
   justify-content: center;
-}
-form{
-  width: 80%;
-  display: flex;
-  font-family: $aux-font;
-  flex-flow: row nowrap;
+  
+  form{
+    width: 80%;
+    display: flex;
+    font-family: $aux-font;
+    flex-flow: row nowrap;
+  }
 }
 
 input[type = "text"]{
@@ -237,15 +238,18 @@ div.open-dropdown{
     width: 100%;
     font-family: $primary-font;
 
-    .field label, em{
-      font-size: .8em;
-    }
+    .field{
+      label, em{
+        font-size: .8em;
+      }
+    } 
     input[type = "email"] ,input[type = "text"], input[type = "password"], input[type = "submit"]{
       padding: .4em 0 .5em .3em;
       width: 100%;
       border: none;
       box-shadow: $main-box-shadow;
       border-radius: 5px;
+      font-size: .7em;
     }
 
     input[type = "submit"]{
