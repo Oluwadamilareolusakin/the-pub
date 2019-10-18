@@ -1,3 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhai|Be+Vietnam|Nunito|Raleway|Rubik&display=swap");
+.user-profile .profile-header {
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+  position: relative; }
+.user-profile .profile-data-controls {
+  font-family: "Rubik", sans-serif;
+  background-color: white;
+  padding: .5em 0;
+  width: 100%;
+  justify-content: flex-end; }
+  .user-profile .profile-data-controls .inner-profile-controls {
+    justify-content: space-between;
+    width: 80%;
+    padding: 0 4em; }
+  .user-profile .profile-data-controls .profile-controls-left {
+    width: 25%; }
+    .user-profile .profile-data-controls .profile-controls-left .joined-date {
+      font-size: .7em;
+      color: #9c9c9c; }
+  .user-profile .profile-data-controls .profile-controls-center {
+    width: 45%;
+    justify-content: center;
+    text-align: center; }
+    .user-profile .profile-data-controls .profile-controls-center .user-metric {
+      margin-right: 2em;
+      font-size: .8em;
+      color: #00aeff; }
+  .user-profile .profile-data-controls .profile-controls-right {
+    width: 30%;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2em;
+    color: white; }
+    .user-profile .profile-data-controls .profile-controls-right .edit-user-btn {
+      background-color: #00aeff;
+      font-size: .6em;
+      padding: .3em .9em;
+      border-radius: 5px; }
+.user-profile .user-profile-avatar {
+  position: absolute;
+  left: 8%;
+  bottom: -28%;
+  z-index: 1; }
+  .user-profile .user-profile-avatar .user-card-avatar {
+    border: 5px solid white;
+    width: 200px;
+    height: 200px; }
 
+.posts-holder {
+  width: 50%;
+  margin: 2em auto;
+  font-family: "Rubik", sans-serif;
+  border: 1px solid rgba(226, 226, 226, 0.421);
+  border-radius: 5px; }
+  .posts-holder .post {
+    padding: 1em 1em .5em 1em;
+    justify-content: flex-start; }
+    .posts-holder .post .post-user-details p {
+      font-size: .8em; }
+    .posts-holder .post .post-created-at {
+      font-size: .6em;
+      margin-top: -1em;
+      color: grey; }
+    .posts-holder .post .post-text {
+      margin-top: .5em;
+      font-size: .8em;
+      color: #505050; }
+    .posts-holder .post .post-action {
+      margin-right: 1em;
+      font-size: .7em;
+      color: #999999; }
+      .posts-holder .post .post-action .count {
+        margin-right: .5em; }
+  .posts-holder hr {
+    border: 1px solid rgba(226, 226, 226, 0.421); }
 
 /*# sourceMappingURL=users.css.map */

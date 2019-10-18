@@ -1,3 +1,118 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'sphinx/sass/component_styles';
+
+.user-profile{
+  .profile-header{
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(0, 0, 0);
+    position: relative;  
+  }
+  
+  .profile-data-controls{
+    font-family: $secondary-font;
+    background-color: white;
+    padding: .5em 0;
+    width: 100%; 
+    justify-content: flex-end;
+    
+    .inner-profile-controls{
+      justify-content: space-between;
+      width: 80%;
+      padding: 0 4em;
+    }
+  
+    .profile-controls-left{
+      width: 25%;
+      .joined-date{
+        font-size: .7em;
+        color: rgb(156, 156, 156);
+      }
+    }
+  
+    .profile-controls-center{
+      width: 45%;
+      justify-content: center;
+      text-align: center;
+  
+      .user-metric{
+        margin-right: 2em;
+        font-size: .8em;
+        color: $main-accent;
+      }
+    }
+  
+    .profile-controls-right{
+      width: 30%;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 2em;
+      color: white;
+      
+      .edit-user-btn{
+        background-color: $main-accent;
+        font-size: .6em;
+        padding: .3em .9em;
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .user-profile-avatar{
+    position: absolute;
+    left: 8%;
+    bottom: -28%;
+    z-index: 1;
+    .user-card-avatar{
+      border: 5px solid white;
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+.posts-holder{
+  width: 50%;
+  margin: 2em auto;
+  font-family: $secondary-font;
+
+  border: 1px solid rgba(226, 226, 226, 0.421);
+  border-radius: 5px;
+
+  .post{
+    padding: 1em 1em .5em 1em;
+    justify-content: flex-start;
+
+    .post-user-details{
+      p{
+        font-size: .8em;
+      }
+    }
+
+    .post-created-at{
+      font-size: .6em;
+      margin-top: -1em;
+      color: grey;
+    }
+
+    .post-text{
+      margin-top: .5em;
+      font-size: .8em;
+      color: rgb(80, 80, 80);
+    }
+
+    .post-action{
+      margin-right: 1em;
+      font-size: .7em;
+      color: rgb(153, 153, 153);
+
+      .count{
+        margin-right: .5em;
+      }
+    }
+  }
+
+  hr{
+    border: 1px solid rgba(226, 226, 226, 0.421);
+  }
+}
