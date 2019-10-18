@@ -79,12 +79,11 @@
   font-size: .7em; }
 
 .timeline-center {
-  padding: 32em 1em 4em 1em;
+  padding: 4em 1em;
   align-self: flex-start;
   align-items: center;
   overflow: hidden;
   overflow-y: scroll;
-  height: 100vh;
   width: 60%;
   background-color: rgba(246, 246, 246, 0.68); }
   .timeline-center .posts {
