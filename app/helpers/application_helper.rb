@@ -20,7 +20,7 @@ module ApplicationHelper
       return link_to 'Cancel Request', friend_request_path(id: user), method: :delete, class: 'cancel-friendship relationship-btn'
     end
 
-    if current_user.friends_with(user)
+    return unless current_user.friends_with(user)
       link_to 'Unfriend', friendship_path(id: user), method: :delete, class: 'cancel-friendship relationship-btn'
     end
   end
