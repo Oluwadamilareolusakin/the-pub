@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def suggestions
-    @suggestions = User.last(5)
+    @suggestions = User.all.shuffle[0..4]
   end
 end

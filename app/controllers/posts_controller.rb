@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @requesteds = current_user.requesteds.first(4)
     @requesters = current_user.requesters.first(4)
-    @friends = current_user.friends.first(4)
+    @friends = current_user.friends.shuffle[0..4]
   end
 
   def destroy
