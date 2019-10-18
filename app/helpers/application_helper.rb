@@ -9,7 +9,8 @@ module ApplicationHelper
     return unless not_same_user(user)
 
     if current_user.friend_request_with?(user) && !current_user.friends_with(user) && !current_user.requester?(user)
-      link_to 'Accept Friend Request', friendships_path(id: user), method: :post, class: 'friendship-btn relationship-btn'
+      return link_to 'Accept Friend Request', friendships_path(id: user), 
+                      method: :post, class: 'friendship-btn relationship-btn'
     end
 
     unless current_user.friend_request_with?(user)
@@ -17,12 +18,12 @@ module ApplicationHelper
     end
 
     unless current_user.friends_with(user) && current_user.requester?(user)
-      return link_to 'Cancel Request', friend_request_path(id: user), method: :delete, class: 'cancel-friendship relationship-btn'
+      return link_to 'Cancel Request', friend_request_path(id: user), 
+                      method: :delete, class: 'cancel-friendship relationship-btn'
     end
 
     return unless current_user.friends_with(user)
-      link_to 'Unfriend', friendship_path(id: user), method: :delete, class: 'cancel-friendship relationship-btn'
-    end
+    link_to 'Unfriend', friendship_path(id: user), method: :delete, class: 'cancel-friendship relationship-btn'
   end
 
   def logo_link
