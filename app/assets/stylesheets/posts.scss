@@ -16,6 +16,7 @@
   left: 0;
   padding: $section-padding;
   overflow-y: scroll;
+  z-index: 2;
 
   .user-details{
     align-items: center;
@@ -115,12 +116,13 @@
   }
 }
 .timeline-center{
-  padding: $section-padding;
+  padding: 2.5em 0;
   align-self: flex-start;  
   align-items: center;
   overflow: hidden;
   overflow-y: scroll;
   width: 60%;
+  z-index: 1;
   background-color: rgba(246, 246, 246, 0.68);
 
   .posts{
@@ -187,13 +189,14 @@
 .timeline-right{
   box-shadow: $main-box-shadow;
   background-color: rgb(253, 253, 253);
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   width: 20%;
   overflow-y: scroll;
   padding: $section-padding;
+  z-index: 1;
   
   .friend-requests{
     font-family: $primary-font;

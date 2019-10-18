@@ -26,36 +26,44 @@ nav {
   justify-content: space-between; }
   nav .nav-right {
     width: 65%;
-    justify-content: space-between; }
-  nav .search-bar {
-    width: 60%; }
+    justify-content: flex-end; }
   nav .nav-btn {
     margin-right: 1.5em;
     font-family: "Nunito", sans-serif;
     font-size: .8em; }
   nav .sign-out-btn {
     color: salmon; }
-  nav form {
-    width: 80%;
-    display: flex;
-    font-family: "Nunito", sans-serif;
-    flex-flow: row nowrap; }
-  nav input[type="text"] {
-    width: 100%;
-    font-size: .7em;
-    border: none;
-    padding: 0 .6em;
-    margin-right: .5em;
-    border-bottom: 1.5px solid #00aeff; }
-    nav input[type="text"]:focus {
-      outline: none; }
-  nav input[type="submit"] {
-    background-color: #00aeff;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: .7em;
-    padding: .2em 1em; }
+
+.search-bar {
+  background-color: white;
+  width: 100%;
+  padding: 1em 6em;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+  justify-content: center; }
+
+form {
+  width: 80%;
+  display: flex;
+  font-family: "Nunito", sans-serif;
+  flex-flow: row nowrap; }
+
+input[type="text"] {
+  width: 100%;
+  font-size: .7em;
+  border: none;
+  padding: 0 .6em;
+  margin-right: .5em;
+  border-bottom: 1.5px solid #00aeff; }
+  input[type="text"]:focus {
+    outline: none; }
+
+input[type="submit"] {
+  background-color: #00aeff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: .7em;
+  padding: .2em 1em; }
 
 .alert {
   z-index: 9;

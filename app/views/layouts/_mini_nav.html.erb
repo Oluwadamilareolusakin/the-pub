@@ -1,0 +1,6 @@
+<div class="search-bar row">
+    <%= form_for(:search, url: new_search_path) do |f| %>
+      <%= f.text_field :search, placeholder: raw("Search &#xf002;"), style: "font-family: 'FontAwesome';" %>
+      <%= f.submit 'Search'%>
+    <% end %>
+  </div>

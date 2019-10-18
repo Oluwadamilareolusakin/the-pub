@@ -13,7 +13,8 @@
   bottom: 0;
   left: 0;
   padding: 4em 1em;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  z-index: 2; }
   .timeline-left .user-details {
     align-items: center;
     justify-content: center; }
@@ -79,12 +80,13 @@
   font-size: .7em; }
 
 .timeline-center {
-  padding: 4em 1em;
+  padding: 2.5em 0;
   align-self: flex-start;
   align-items: center;
   overflow: hidden;
   overflow-y: scroll;
   width: 60%;
+  z-index: 1;
   background-color: rgba(246, 246, 246, 0.68); }
   .timeline-center .posts {
     width: 80%;
@@ -126,13 +128,14 @@
 .timeline-right {
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
   background-color: #fdfdfd;
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   width: 20%;
   overflow-y: scroll;
-  padding: 4em 1em; }
+  padding: 4em 1em;
+  z-index: 1; }
   .timeline-right .friend-requests {
     font-family: "Be Vietnam", sans-serif; }
     .timeline-right .friend-requests .requests-heading {

@@ -7,6 +7,7 @@ module ApplicationHelper
 
   def friendship_button(user)
     return unless not_same_user(user)
+
     if current_user.friend_request_with?(user) && !current_user.friends_with(user) && !current_user.requester?(user)
       link_to 'Accept Friend Request', friendships_path(id: user), method: :post, class: 'friendship-btn'
     end
@@ -15,7 +16,7 @@ module ApplicationHelper
       return link_to 'Friend+', friend_requests_path(id: user), method: :post, class: 'friendship-btn'
     end
 
-    unless current_user.friends_with(user) && current_user.requester?(user) 
+    unless current_user.friends_with(user) && current_user.requester?(user)
       return link_to 'Cancel Request', friend_request_path(id: user), method: :delete, class: 'cancel-friendship'
     end
 
@@ -25,6 +26,6 @@ module ApplicationHelper
   end
 
   def logo_link
-    link_to  "The Pub", root_path
+    link_to 'The Pub', root_path
   end
 end
