@@ -5,12 +5,12 @@
   <% end %>
 </div>
 <% else %>
-    <div class="no-users-center column">
-      <h3>You currently have no <%= "#{object}" %>. Here are a few friends you could make</h3>
-    </div>
-        <div class="users-holder">
-          <% @suggestions.each do |suggestion| %>
-            <%= render  "shared/user", user: suggestion %>
-          <% end %>
-        </div>
+  <div class="no-users-center column">
+    <h3>You currently have no <%= "#{object}" %>. Here are a few friends you could make</h3>
+  </div>
+  <div class="users-holder">
+    <% @suggestions.each do |suggestion| %>
+      <%= render  "shared/user", user: suggestion %>
+    <% end %>
+  </div>
 <% end %>
