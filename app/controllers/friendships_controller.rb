@@ -2,6 +2,7 @@
 
 class FriendshipsController < ApplicationController
   before_action :authenticate_user!
+  before_action :suggestions, only: %i[index]
 
   def index
     @friends = current_user.friends

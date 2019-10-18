@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def store_url
     session[:url] = request.original_url
   end
+
+  def suggestions
+    @suggestions = User.last(5)
+  end
 end

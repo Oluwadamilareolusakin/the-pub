@@ -130,25 +130,32 @@ div.open-dropdown{
 }
 
 .no-users-center{
-  height: 50vh;
   font-family: $aux-font;
-  color: $main-accent;
+  color: grey;
   justify-content: center;
   align-items: center;
+  font-size: .8em;
+  margin-bottom: 1em;
 }
 
 .users-section-heading{
   font-family: $primary-font;
   font-size: 2em;
-  padding: 3em 0 1em 0;
+  padding: 3em 0 0em 0;
   text-align: center;
 }
 
 .users{
-  display: flex;
-  flex-flow: row wrap;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  
+  .users-holder{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
   .user{
     width: 25%;
     height: 300px;
@@ -190,6 +197,13 @@ div.open-dropdown{
   }
 }
 
+.placeholder-user{
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
 
 .create-form{
   width: 35%;
@@ -200,8 +214,9 @@ div.open-dropdown{
 
   .logo{
     width: 100%;
-    p{
-      text-align: center;
+    text-align: center;
+    a{
+      width: 100%;
     }
   }
 

@@ -23,4 +23,8 @@ module ApplicationHelper
       link_to 'Unfriend', friendship_path(id: user), method: :delete, class: 'cancel-friendship'
     end
   end
+
+  def logo_link
+    link_to  "The Pub", root_path
+  end
 end
