@@ -98,23 +98,27 @@ div.open-dropdown {
   display: flex; }
 
 .no-users-center {
-  height: 50vh;
   font-family: "Nunito", sans-serif;
-  color: #00aeff;
+  color: grey;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  font-size: .8em;
+  margin-bottom: 1em; }
 
 .users-section-heading {
   font-family: "Be Vietnam", sans-serif;
   font-size: 2em;
-  padding: 3em 0 1em 0;
+  padding: 3em 0 0em 0;
   text-align: center; }
 
 .users {
-  display: flex;
-  flex-flow: row wrap;
   width: 100%;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
+  .users .users-holder {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
   .users .user {
     width: 25%;
     height: 300px;
@@ -144,6 +148,12 @@ div.open-dropdown {
       .users .user .user-card-body .cancel-friendship, .users .user .user-card-body .friendship-btn {
         margin-top: 2em; }
 
+.placeholder-user {
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  border-radius: 50%; }
+
 .create-form {
   width: 35%;
   margin: auto;
@@ -151,9 +161,10 @@ div.open-dropdown {
   justify-content: center;
   align-items: flex-start; }
   .create-form .logo {
-    width: 100%; }
-    .create-form .logo p {
-      text-align: center; }
+    width: 100%;
+    text-align: center; }
+    .create-form .logo a {
+      width: 100%; }
   .create-form h2.form-title {
     text-align: center;
     width: 100%;
