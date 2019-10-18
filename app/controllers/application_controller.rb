@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def store_url
     session[:url] = request.original_url
   end
+
+  def suggestions
+    @suggestions = User.all.shuffle[0..4]
+  end
 end

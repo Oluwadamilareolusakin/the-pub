@@ -13,41 +13,56 @@
   color: #00aeff; }
   .logo a {
     text-decoration: none; }
+    .logo a:hover {
+      text-decoration: none; }
 
 nav {
   width: 100%;
   background-color: white;
-  position: absolute;
   padding: .3em 1.3em;
-  z-index: 9;
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+  position: relative;
+  z-index: 8;
   justify-content: space-between; }
   nav .nav-right {
     width: 65%;
-    justify-content: space-between; }
-  nav .search-bar {
-    width: 60%; }
-  nav form {
+    justify-content: flex-end; }
+  nav .nav-btn {
+    margin-right: 1.5em;
+    font-family: "Nunito", sans-serif;
+    font-size: .8em; }
+  nav .sign-out-btn {
+    color: salmon; }
+
+.search-bar {
+  background-color: white;
+  width: 100%;
+  padding: 1em 6em;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
+  justify-content: center; }
+  .search-bar form {
     width: 80%;
     display: flex;
     font-family: "Nunito", sans-serif;
     flex-flow: row nowrap; }
-  nav input[type="text"] {
-    width: 100%;
-    font-size: .7em;
-    border: none;
-    padding: 0 .6em;
-    margin-right: .5em;
-    border-bottom: 1.5px solid #00aeff; }
-    nav input[type="text"]:focus {
-      outline: none; }
-  nav input[type="submit"] {
-    background-color: #00aeff;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: .7em;
-    padding: .2em 1em; }
+
+input[type="text"] {
+  width: 100%;
+  font-size: .7em;
+  border: none;
+  padding: 0 .6em;
+  margin-right: .5em;
+  border-bottom: 1.5px solid #00aeff; }
+  input[type="text"]:focus {
+    outline: none; }
+
+input[type="submit"] {
+  background-color: #00aeff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: .7em;
+  padding: .2em 1em; }
 
 .alert {
   z-index: 9;
@@ -69,7 +84,7 @@ nav {
   font-size: .8em; }
 
 .notifications-icon {
-  color: slategray; }
+  color: #00aeff; }
 
 div.dropdown-items {
   display: none;
@@ -90,23 +105,27 @@ div.open-dropdown {
   display: flex; }
 
 .no-users-center {
-  height: 50vh;
   font-family: "Nunito", sans-serif;
-  color: #00aeff;
+  color: grey;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  font-size: .8em;
+  margin-bottom: 1em; }
 
 .users-section-heading {
   font-family: "Be Vietnam", sans-serif;
   font-size: 2em;
-  padding: 3em 0 1em 0;
+  padding: 3em 0 0em 0;
   text-align: center; }
 
 .users {
-  display: flex;
-  flex-flow: row wrap;
   width: 100%;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
+  .users .users-holder {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
   .users .user {
     width: 25%;
     height: 300px;
@@ -136,6 +155,12 @@ div.open-dropdown {
       .users .user .user-card-body .cancel-friendship, .users .user .user-card-body .friendship-btn {
         margin-top: 2em; }
 
+.placeholder-user {
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  border-radius: 50%; }
+
 .create-form {
   width: 35%;
   margin: auto;
@@ -143,9 +168,10 @@ div.open-dropdown {
   justify-content: center;
   align-items: flex-start; }
   .create-form .logo {
-    width: 100%; }
-    .create-form .logo p {
-      text-align: center; }
+    width: 100%;
+    text-align: center; }
+    .create-form .logo a {
+      width: 100%; }
   .create-form h2.form-title {
     text-align: center;
     width: 100%;
@@ -155,14 +181,15 @@ div.open-dropdown {
   .create-form form {
     width: 100%;
     font-family: "Be Vietnam", sans-serif; }
-    .create-form form .field label, .create-form form em {
+    .create-form form .field label, .create-form form .field em {
       font-size: .8em; }
     .create-form form input[type="email"], .create-form form input[type="text"], .create-form form input[type="password"], .create-form form input[type="submit"] {
       padding: .4em 0 .5em .3em;
       width: 100%;
       border: none;
       box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
-      border-radius: 5px; }
+      border-radius: 5px;
+      font-size: .7em; }
     .create-form form input[type="submit"] {
       margin-top: 1em;
       transition: .25s; }

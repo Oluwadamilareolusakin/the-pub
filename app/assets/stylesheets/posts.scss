@@ -7,15 +7,14 @@
 .timeline-left{
   font-family: $aux-font;
   width: 20%;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   box-shadow: $main-box-shadow;
   align-self: flex-start;  
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  height: 100vh;
+
   padding: $section-padding;
   overflow-y: scroll;
+  z-index: 2;
 
   .user-details{
     align-items: center;
@@ -115,86 +114,53 @@
   }
 }
 .timeline-center{
-  padding: 32em 1em 4em 1em;
   align-self: flex-start;  
   align-items: center;
   overflow: hidden;
-  overflow-y: scroll;
   height: 100vh;
+  overflow-y: scroll;
   width: 60%;
   background-color: rgba(246, 246, 246, 0.68);
-
-  .posts{
+  
+  .posts-holder{
+    background-color: rgb(255, 255, 255);
     width: 80%;
-    font-family: $aux-font;
-    .post{
-      margin-top: 2em;
-      width: 100%;
+  }  
 
-      .post-user-details{
-        justify-content: flex-end;
-        align-items: flex-start;
-        margin-left: .3em;
-     
-        
-        p{
-          font-size: .8em;
-        }
-
-        span{
-          color: grey;
-          font-size: .6em;
-        }
-      }
-
-      .post-body{
-        border-radius: 5px;
-        padding: .4em 1em;
-        background-color: white;
-
-        .post-text{
-          font-size: .8em;
-        }
-        .post-actions{
-          .post-action{
-            margin-right: 1em;
-            font-size: .8em;
-            color: grey;
-            .count{
-              margin-right: .2em;
-            }
-          }
-        }
-      }
-
-      .comment{
-        font-size: .6em;
-
-        input{
-          border-radius: 5px;
-          background-color: $main-grey;
-          border: none;
-          padding: .5em .4em;
-        }
-        input[type="text"]{
-          width: 80%;
-        }
-      }
+  input[type = "text"]{
+    width: 100%;
+    font-size: .7em;
+    border: none;
+    padding: 0 .6em;
+    margin-right: .5em;
+    border-bottom: 1.5px solid $main-accent;
+  
+    &:focus{
+      outline: none;
     }
   }
+  
+  input[type = "submit"]{
+    background-color: $main-accent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: .7em;
+    padding: .2em 1em;
+  }
+
 }
+  
 
 
 .timeline-right{
   box-shadow: $main-box-shadow;
   background-color: rgb(253, 253, 253);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  height: 100vh;
   width: 20%;
   overflow-y: scroll;
   padding: $section-padding;
+  z-index: 1;
   
   .friend-requests{
     font-family: $primary-font;
@@ -207,26 +173,29 @@
       .suggestion{
         font-size: .7em;
         margin-top: .5em;
-        align-items: flex-start;
         img{
           width: 60px;
           height: 60px;
         }
-        .column{
+        .suggestion-actions{
           justify-content: flex-start;
           align-items: flex-start;
           margin: none;
           margin-left: .2em;
           width: 70%;
-          padding: 0;
-          p{
-            margin: 0;
+          
+          a.relationship-btn{
+            padding: 0em 2em;
           }
         }
 
         .row{
           align-items: flex-start;
           justify-content: flex-start;
+
+          a{
+            margin-top: -1em;
+          }
         }
       }
     }
@@ -242,10 +211,10 @@
 }
 
 %friendship-btn{
-  padding: 1em 1em;
-  border-radius: 30px;
+  font-size: .6em;
+  padding: .3em .9em;
   color: white;
-  font-size: .8em;
+  border-radius: 5px;
 }
 
 .friendship-btn{

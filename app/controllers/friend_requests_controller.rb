@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class FriendRequestsController < ApplicationController
+  before_action :suggestions, only: %i[requesters requesteds]
+
   def create
     @user = User.find(params[:id])
     current_user.request_friendship_with(@user)
@@ -13,12 +15,12 @@ class FriendRequestsController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     current_user.remove_friend_request_with(@user)
-    flash[:success] = 'Request cancel successfully'
+    flash[:success] = 'Request cancelled successfully'
     redirect_back_or_to root_path
   end
 
   def requesters
-    @requesters = current_user.requesters    
+    @requesters = current_user.requesters
   end
 
   def requesteds

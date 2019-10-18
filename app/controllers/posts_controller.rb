@@ -4,16 +4,16 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show destroy]
   before_action :authenticate_user!
   before_action :store_url
-
+  before_action :suggestions, only: %i[timeline]
   def show; end
 
   def create
     if params[:post][:content].empty?
-      flash[:notice] = "Nice try! Type something before you Pub"
+      flash[:notice] = 'Nice try! Type something before you Pub'
       redirect_back_or_to root_path
       return
     end
-    
+
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:notice] = 'Which came first? The pub or the post :)'
@@ -28,8 +28,7 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @requesteds = current_user.requesteds.first(4)
     @requesters = current_user.requesters.first(4)
-    @suggestions = User.last(5)
-    @friends = current_user.friends.first(4)
+    @friends = current_user.friends.shuffle[0..4]
   end
 
   def destroy

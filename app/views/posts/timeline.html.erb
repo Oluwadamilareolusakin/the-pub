@@ -24,7 +24,7 @@
           <%= link_to  "VIEW ALL", friends_path%>
         </div>
       </div>
-      <%= render  partial: "user_list", locals: {users: @friends} %>
+      <%= render  "shared/user_list", users: @friends, object: 'friends' %>
     </div>
 
     <hr>
@@ -36,7 +36,7 @@
             <%= link_to  "VIEW ALL", requesteds_path%>
           </div>
       </div>
-      <%= render  partial: "user_list", locals: {users: @requesteds} %>
+      <%= render  "shared/user_list", users: @requesteds, object: 'requests' %>
     </div>
 
     <hr>
@@ -47,14 +47,16 @@
           <%= link_to  "VIEW ALL", requesters_path%>
         </div>
       </div>
-      <%= render partial: "user_list", locals: {users: @requesters} %>
+      <%= render "shared/user_list", users: @requesters, object: 'requests' %>
     </div>
   </div>
     
-  <div class="timeline-center column">
-    <div class="posts">
+  <div class="timeline-center">
+    <%= render  "layouts/mini_nav" %>
+    <div class="posts-holder">
       <% @posts.each do |post|%>
-        <%= render post %>
+        <%= render 'shared/post', post: post %>
+        <hr>
       <% end %>
     </div>
   </div>
@@ -66,7 +68,7 @@
           FRIEND SUGGESTIONS
          </h3>
         </div>
-        <%= render  partial: "suggestions", locals: {suggestions: @suggestions} %>
+        <%= render "shared/suggestions", suggestions: @suggestions %>
      </div>
   </div>
 </div>

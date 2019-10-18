@@ -17,7 +17,7 @@ module PostsHelper
     if user.avatar.attached?
       image_tag url_for(user.avatar), class: 'user-card-avatar'
     else
-      image_tag 'blank-user.jpg', class: 'user-card-avatar'
+      image_tag 'blank.jpg', class: 'user-card-avatar'
     end
   end
 

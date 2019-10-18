@@ -1,0 +1,13 @@
+<div class="user column">
+    <div class="user-card-header">
+      <div class="user-avatar">
+        <%= user_avatar(user) %>
+      </div>
+    </div>
+    <div class="user-card-body column">
+      
+      <%= link_to user.name, profile_path(user) %>
+      
+      <%= friendship_button(user) %>
+    </div>
+  </div>

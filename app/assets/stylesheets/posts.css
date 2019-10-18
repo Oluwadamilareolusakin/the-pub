@@ -8,12 +8,10 @@
   background-color: white;
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
   align-self: flex-start;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 4em 1em;
-  overflow-y: scroll; }
+  height: 100vh;
+  padding: 1em 1em;
+  overflow-y: scroll;
+  z-index: 2; }
   .timeline-left .user-details {
     align-items: center;
     justify-content: center; }
@@ -79,61 +77,41 @@
   font-size: .7em; }
 
 .timeline-center {
-  padding: 32em 1em 4em 1em;
   align-self: flex-start;
   align-items: center;
   overflow: hidden;
-  overflow-y: scroll;
   height: 100vh;
+  overflow-y: scroll;
   width: 60%;
   background-color: rgba(246, 246, 246, 0.68); }
-  .timeline-center .posts {
-    width: 80%;
-    font-family: "Nunito", sans-serif; }
-    .timeline-center .posts .post {
-      margin-top: 2em;
-      width: 100%; }
-      .timeline-center .posts .post .post-user-details {
-        justify-content: flex-end;
-        align-items: flex-start;
-        margin-left: .3em; }
-        .timeline-center .posts .post .post-user-details p {
-          font-size: .8em; }
-        .timeline-center .posts .post .post-user-details span {
-          color: grey;
-          font-size: .6em; }
-      .timeline-center .posts .post .post-body {
-        border-radius: 5px;
-        padding: .4em 1em;
-        background-color: white; }
-        .timeline-center .posts .post .post-body .post-text {
-          font-size: .8em; }
-        .timeline-center .posts .post .post-body .post-actions .post-action {
-          margin-right: 1em;
-          font-size: .8em;
-          color: grey; }
-          .timeline-center .posts .post .post-body .post-actions .post-action .count {
-            margin-right: .2em; }
-      .timeline-center .posts .post .comment {
-        font-size: .6em; }
-        .timeline-center .posts .post .comment input {
-          border-radius: 5px;
-          background-color: #eeeeee;
-          border: none;
-          padding: .5em .4em; }
-        .timeline-center .posts .post .comment input[type="text"] {
-          width: 80%; }
+  .timeline-center .posts-holder {
+    background-color: white;
+    width: 80%; }
+  .timeline-center input[type="text"] {
+    width: 100%;
+    font-size: .7em;
+    border: none;
+    padding: 0 .6em;
+    margin-right: .5em;
+    border-bottom: 1.5px solid #00aeff; }
+    .timeline-center input[type="text"]:focus {
+      outline: none; }
+  .timeline-center input[type="submit"] {
+    background-color: #00aeff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: .7em;
+    padding: .2em 1em; }
 
 .timeline-right {
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
   background-color: #fdfdfd;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  height: 100vh;
   width: 20%;
   overflow-y: scroll;
-  padding: 4em 1em; }
+  padding: 1em 1em;
+  z-index: 1; }
   .timeline-right .friend-requests {
     font-family: "Be Vietnam", sans-serif; }
     .timeline-right .friend-requests .requests-heading {
@@ -143,23 +121,23 @@
       width: 100%; }
       .timeline-right .friend-requests .suggestions .suggestion {
         font-size: .7em;
-        margin-top: .5em;
-        align-items: flex-start; }
+        margin-top: .5em; }
         .timeline-right .friend-requests .suggestions .suggestion img {
           width: 60px;
           height: 60px; }
-        .timeline-right .friend-requests .suggestions .suggestion .column {
+        .timeline-right .friend-requests .suggestions .suggestion .suggestion-actions {
           justify-content: flex-start;
           align-items: flex-start;
           margin: none;
           margin-left: .2em;
-          width: 70%;
-          padding: 0; }
-          .timeline-right .friend-requests .suggestions .suggestion .column p {
-            margin: 0; }
+          width: 70%; }
+          .timeline-right .friend-requests .suggestions .suggestion .suggestion-actions a.relationship-btn {
+            padding: 0em 2em; }
         .timeline-right .friend-requests .suggestions .suggestion .row {
           align-items: flex-start;
           justify-content: flex-start; }
+          .timeline-right .friend-requests .suggestions .suggestion .row a {
+            margin-top: -1em; }
 
 .user-card-avatar {
   border-radius: 50%;
@@ -167,10 +145,10 @@
   height: 50px; }
 
 .friendship-btn, .cancel-friendship {
-  padding: 1em 1em;
-  border-radius: 30px;
+  font-size: .6em;
+  padding: .3em .9em;
   color: white;
-  font-size: .8em; }
+  border-radius: 5px; }
 
 .friendship-btn {
   background-color: #00aeff; }

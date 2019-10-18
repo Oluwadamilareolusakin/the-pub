@@ -30,9 +30,11 @@
       </div>
     </div>
     <div class="comment">
-      <%= form_for [post, @comment] do |f| %>
-        <%= f.text_field :content, placeholder: 'Write a comment...' %>
-        <%= f.submit "Comment"%>
+      <% if controller_name != 'users' %>
+          <%= form_for [post, @comment] do |f| %>
+          <%= f.text_field :content, placeholder: 'Write a comment...' %>
+          <%= f.submit "Comment"%>
+        <% end %>
       <% end %>
     </div>
   </div>

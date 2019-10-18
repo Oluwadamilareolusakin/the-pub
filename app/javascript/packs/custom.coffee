@@ -1,7 +1,7 @@
 class Notifications
   constructor: ->
     @notification = $('[data-behaviour = "notifications"]')
-    @setup() if @notification.length > 0
+    @setup() if @notification.length
 
   setup: ->
     $("[data-behaviour='notifications-btn']").on "click", @handleClick
@@ -16,7 +16,7 @@ class Notifications
     items = $.map data, (notification) ->
       "<a class = 'dropdown-item' href=#{notification.url}>#{notification.actor} #{notification.action} #{notification.action_receipient}</a> <hr>"
 
-    $("[data-behaviour='unread-count']").text(items.length)
+    $("[data-behaviour='unread-count']").text(items.length || 0)
     if items.length == 0
       @empty = "<p>No notifications for you</p>"
       $("[data-behaviour='notification-items']").html(@empty) 
