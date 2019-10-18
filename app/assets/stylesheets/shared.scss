@@ -65,27 +65,7 @@ nav{
   }
 }
 
-input[type = "text"]{
-  width: 100%;
-  font-size: .7em;
-  border: none;
-  padding: 0 .6em;
-  margin-right: .5em;
-  border-bottom: 1.5px solid $main-accent;
 
-  &:focus{
-    outline: none;
-  }
-}
-
-input[type = "submit"]{
-  background-color: $main-accent;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: .7em;
-  padding: .2em 1em;
-}
 
 .alert{
   z-index: 9;
