@@ -1,9 +1,7 @@
 <div class="create-form column">
     <div class="logo">
-        <p>
-          The Pub
-        </p>
-      </div>
+      <%= logo_link %>
+    </div>
   <h2 class="form-title">Log in</h2>
   
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
