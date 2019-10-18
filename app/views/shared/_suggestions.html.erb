@@ -1,0 +1,18 @@
+<div class="suggestions column">
+  <% if suggestions.any? %>
+    <% suggestions.each do |suggestion| %>
+      <div class="suggestion row">
+        <div class="user-avatar">
+          <%= user_avatar(suggestion)%> 
+        </div>
+        <div>
+          <p>
+            <%= suggestion.name %> 
+          </p>
+          <%= friendship_button(suggestion) %>
+        </div>
+      </div>  
+      <hr>
+    <% end %>
+  <% end %>
+</div>
