@@ -1,0 +1,17 @@
+<div class="requests row justify-content-sb">
+<% if users.any?%>
+  <%users.each do |user|%>
+  <div class="column request-user-info">
+    <%= user_avatar(user)%>
+    <%= link_to user.name.split(' ')[0], profile_path(user)%>
+  </div>
+  <%end%>
+<%else%>
+<div class="column">
+  <div class="placeholder-user">
+
+  </div>
+    <p>Currently no <%= object %></p>
+</div>
+<%end%>
+</div>
