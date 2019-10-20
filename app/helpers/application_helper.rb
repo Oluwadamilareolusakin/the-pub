@@ -22,7 +22,7 @@ module ApplicationHelper
 
     return unless current_user.friends_with(user)
 
-    link_to 'Unfriend', friendship_path(id: user), method: :delete, class: 'cancel-friendship relationship-btn'
+    return link_to 'Unfriend', friendship_path(id: user), method: :delete, class: 'cancel-friendship relationship-btn'
   end
 
   def logo_link
