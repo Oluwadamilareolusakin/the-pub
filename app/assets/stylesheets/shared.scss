@@ -192,17 +192,26 @@ div.open-dropdown{
 
 
 .create-form{
-  width: 35%;
   margin: auto;
   height: 100vh;
+  width: 50%;
   justify-content: center;
   align-items: flex-start;
+
+  @media #{$mq-medium}{
+    width: 35%;
+  }
 
   .logo{
     width: 100%;
     text-align: center;
     a{
+      font-size: 2em;
       width: 100%;
+
+      @media #{$mq-medium}{
+        font-size: 1em;
+      }
     }
   }
 
@@ -210,8 +219,14 @@ div.open-dropdown{
     text-align: center;
     width: 100%;
     font-family: $primary-font;
-    font-size: 1.2em;
+    font-size: 1.9em;
+    margin-bottom: 1em;
     color: grey;
+
+    @media #{$mq-medium}{
+      margin: 0;
+      font-size: 1.2em;
+    }
   }
 
   form{
@@ -220,16 +235,26 @@ div.open-dropdown{
 
     .field{
       label, em{
-        font-size: .8em;
+        font-size: 1.2em;
+        
+        @media #{$mq-medium}{
+          font-size: .8em;
+        }
       }
     } 
     input[type = "email"] ,input[type = "text"], input[type = "password"], input[type = "submit"]{
-      padding: .4em 0 .5em .3em;
       width: 100%;
       border: none;
       box-shadow: $main-box-shadow;
       border-radius: 5px;
-      font-size: .7em;
+      padding: .7em 0 .8em .3em;
+      font-size: 1.1em;
+
+      @media #{$mq-medium}{
+        font-size: .7em;
+        padding: .4em 0 .5em .3em;        
+      }
+
     }
 
     input[type = "submit"]{

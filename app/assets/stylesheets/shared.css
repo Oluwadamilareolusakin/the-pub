@@ -144,34 +144,53 @@ div.open-dropdown {
   border-radius: 50%; }
 
 .create-form {
-  width: 35%;
   margin: auto;
   height: 100vh;
+  width: 50%;
   justify-content: center;
   align-items: flex-start; }
+  @media (min-width: 64em) {
+    .create-form {
+      width: 35%; } }
   .create-form .logo {
     width: 100%;
     text-align: center; }
     .create-form .logo a {
+      font-size: 2em;
       width: 100%; }
+      @media (min-width: 64em) {
+        .create-form .logo a {
+          font-size: 1em; } }
   .create-form h2.form-title {
     text-align: center;
     width: 100%;
     font-family: "Be Vietnam", sans-serif;
-    font-size: 1.2em;
+    font-size: 1.9em;
+    margin-bottom: 1em;
     color: grey; }
+    @media (min-width: 64em) {
+      .create-form h2.form-title {
+        margin: 0;
+        font-size: 1.2em; } }
   .create-form form {
     width: 100%;
     font-family: "Be Vietnam", sans-serif; }
     .create-form form .field label, .create-form form .field em {
-      font-size: .8em; }
+      font-size: 1.2em; }
+      @media (min-width: 64em) {
+        .create-form form .field label, .create-form form .field em {
+          font-size: .8em; } }
     .create-form form input[type="email"], .create-form form input[type="text"], .create-form form input[type="password"], .create-form form input[type="submit"] {
-      padding: .4em 0 .5em .3em;
       width: 100%;
       border: none;
       box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
       border-radius: 5px;
-      font-size: .7em; }
+      padding: .7em 0 .8em .3em;
+      font-size: 1.1em; }
+      @media (min-width: 64em) {
+        .create-form form input[type="email"], .create-form form input[type="text"], .create-form form input[type="password"], .create-form form input[type="submit"] {
+          font-size: .7em;
+          padding: .4em 0 .5em .3em; } }
     .create-form form input[type="submit"] {
       margin-top: 1em;
       transition: .25s; }
