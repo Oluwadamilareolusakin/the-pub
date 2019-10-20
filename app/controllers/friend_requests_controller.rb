@@ -3,6 +3,12 @@
 class FriendRequestsController < ApplicationController
   before_action :suggestions, only: %i[requesters requesteds]
 
+  def show
+    @request = FriendRequest.find(params[:id])
+    @user = User.find_by(id: @request.requester.id)
+    redirect_to profile_path(@user)
+  end
+
   def create
     @user = User.find(params[:id])
     current_user.request_friendship_with(@user)
