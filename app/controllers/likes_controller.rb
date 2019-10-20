@@ -17,6 +17,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
+    return unless @like
     @like.destroy
     redirect_back_or_to root_path
   end

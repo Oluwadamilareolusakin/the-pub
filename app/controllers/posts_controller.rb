@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    return unless @post
     @post.destroy
     flash[:success] = 'We hate to see your post go!'
     redirect_back_or_to root_path
