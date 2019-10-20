@@ -22,20 +22,28 @@
       width: 80%;
       padding: 0 4em;
     }
-  
+    
     .profile-controls-left{
       width: 25%;
       .joined-date{
         font-size: .7em;
         color: rgb(156, 156, 156);
       }
+
+      .user-details{
+        padding-left: 1.4em;
+
+        @media #{$mq-medium}{
+          padding-left: 0;
+        }
+      }
     }
-  
+    
     .profile-controls-center{
       width: 45%;
       justify-content: center;
       text-align: center;
-  
+      
       .user-metric{
         margin-right: 2em;
         font-size: .8em;
@@ -52,9 +60,13 @@
       
       .edit-user-btn{
         background-color: $main-accent;
-        font-size: .6em;
+        font-size: 1em;
         padding: .3em .9em;
         border-radius: 5px;
+
+        @media #{$mq-medium}{
+          font-size: .6em;
+        }
       }
     }
   }
@@ -72,33 +84,55 @@
   }
 }
 .posts-holder{
-  width: 50%;
-  margin: 2em auto;
+  width: 70%;
+  margin: 3em auto;
   font-family: $secondary-font;
-
   border: 1px solid rgba(226, 226, 226, 0.421);
   border-radius: 5px;
 
-  .post{
-    padding: 1em 1em .5em 1em;
-    justify-content: flex-start;
+  @media #{$mq-medium}{
+    margin: 2em auto;
+    width: 50%;
+  } 
 
+  .post{
+    padding: 1em 2em 0em 2em;
+    justify-content: flex-start;
+    
     .post-user-details{
+      padding-left: .5em;
+
+      @media #{$mq-medium}{
+        padding-left: .3em;
+      }
+      
       p{
-        font-size: .8em;
+        font-size: 1em;
+        
+        @media #{$mq-medium}{
+          font-size: .8em;
+        }
       }
     }
 
     .post-created-at{
-      font-size: .6em;
-      margin-top: -1em;
       color: grey;
+      font-size: .9em;
+      
+      @media #{$mq-medium}{
+        margin-top: -1.5em;
+        font-size: .6em;
+      }
     }
 
     .post-text{
       margin-top: .5em;
-      font-size: .8em;
       color: rgb(80, 80, 80);
+      font-size: 1.2em;
+
+      @media #{$mq-medium}{
+        font-size: .8em;
+      }
     }
 
     .post-action{

@@ -21,6 +21,11 @@
     .user-profile .profile-data-controls .profile-controls-left .joined-date {
       font-size: .7em;
       color: #9c9c9c; }
+    .user-profile .profile-data-controls .profile-controls-left .user-details {
+      padding-left: 1.4em; }
+      @media (min-width: 64em) {
+        .user-profile .profile-data-controls .profile-controls-left .user-details {
+          padding-left: 0; } }
   .user-profile .profile-data-controls .profile-controls-center {
     width: 45%;
     justify-content: center;
@@ -37,9 +42,12 @@
     color: white; }
     .user-profile .profile-data-controls .profile-controls-right .edit-user-btn {
       background-color: #00aeff;
-      font-size: .6em;
+      font-size: 1em;
       padding: .3em .9em;
       border-radius: 5px; }
+      @media (min-width: 64em) {
+        .user-profile .profile-data-controls .profile-controls-right .edit-user-btn {
+          font-size: .6em; } }
 .user-profile .user-profile-avatar {
   position: absolute;
   left: 8%;
@@ -51,24 +59,42 @@
     height: 200px; }
 
 .posts-holder {
-  width: 50%;
-  margin: 2em auto;
+  width: 70%;
+  margin: 3em auto;
   font-family: "Rubik", sans-serif;
   border: 1px solid rgba(226, 226, 226, 0.421);
   border-radius: 5px; }
+  @media (min-width: 64em) {
+    .posts-holder {
+      margin: 2em auto;
+      width: 50%; } }
   .posts-holder .post {
-    padding: 1em 1em .5em 1em;
+    padding: 1em 2em 0em 2em;
     justify-content: flex-start; }
-    .posts-holder .post .post-user-details p {
-      font-size: .8em; }
+    .posts-holder .post .post-user-details {
+      padding-left: .5em; }
+      @media (min-width: 64em) {
+        .posts-holder .post .post-user-details {
+          padding-left: .3em; } }
+      .posts-holder .post .post-user-details p {
+        font-size: 1em; }
+        @media (min-width: 64em) {
+          .posts-holder .post .post-user-details p {
+            font-size: .8em; } }
     .posts-holder .post .post-created-at {
-      font-size: .6em;
-      margin-top: -1em;
-      color: grey; }
+      color: grey;
+      font-size: .9em; }
+      @media (min-width: 64em) {
+        .posts-holder .post .post-created-at {
+          margin-top: -1.5em;
+          font-size: .6em; } }
     .posts-holder .post .post-text {
       margin-top: .5em;
-      font-size: .8em;
-      color: #505050; }
+      color: #505050;
+      font-size: 1.2em; }
+      @media (min-width: 64em) {
+        .posts-holder .post .post-text {
+          font-size: .8em; } }
     .posts-holder .post .post-action {
       margin-right: 1em;
       font-size: .7em;
