@@ -55,7 +55,7 @@ class User < ApplicationRecord
   end
 
   def request_friendship_with(user)
-    requesteds << user
+    requesteds << user unless self.friend_request_with?(user)
   end
 
   def friend_request_with?(user)
