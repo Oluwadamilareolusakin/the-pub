@@ -19,18 +19,24 @@
 nav {
   width: 100%;
   background-color: white;
-  padding: .3em 1.3em;
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
   position: relative;
+  padding: 1.2em 1.3em;
   z-index: 8;
   justify-content: space-between; }
+  @media (min-width: 64em) {
+    nav {
+      padding: .3em 1.3em; } }
   nav .nav-right {
     width: 65%;
     justify-content: flex-end; }
   nav .nav-btn {
     margin-right: 1.5em;
     font-family: "Nunito", sans-serif;
-    font-size: .8em; }
+    font-size: 1em; }
+    @media (min-width: 64em) {
+      nav .nav-btn {
+        font-size: .8em; } }
   nav .sign-out-btn {
     color: salmon; }
 
@@ -97,7 +103,7 @@ div.open-dropdown {
 .users-section-heading {
   font-family: "Be Vietnam", sans-serif;
   font-size: 2em;
-  padding: 3em 0 0em 0;
+  padding: 3em 0 1em 0;
   text-align: center; }
 
 .users {
@@ -125,7 +131,10 @@ div.open-dropdown {
       background-color: #00aeff; }
       .users .user .user-card-header .user-avatar {
         position: absolute;
-        left: 29%; }
+        left: 20%; }
+        @media (min-width: 64em) {
+          .users .user .user-card-header .user-avatar {
+            left: 29%; } }
         .users .user .user-card-header .user-avatar .user-card-avatar {
           border: 4px solid white;
           width: 150px;
