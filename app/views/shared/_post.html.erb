@@ -4,7 +4,7 @@
     <%= user_avatar(post.user) %>
     <div class="column post-user-details">
       <p>
-        <%= post.user.name %> 
+        <%= link_to post.user.name, profile_path(post.user) %> 
       </p>
       <span class="post-created-at"><%= time_ago_in_words post.created_at %> </span>
     </div>
