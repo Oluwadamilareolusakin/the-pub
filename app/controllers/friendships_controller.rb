@@ -15,7 +15,7 @@ class FriendshipsController < ApplicationController
     current_user.become_friends_with(@user)
     friendship = Friendship.find_by(friend_id: params[:id])
     flash[:success] = "You are now friends with #{@user.name}"
-    friendship.notifications.create(receipent: @user, actor: current_user, action: 'accepted')
+    friendship.notifications.create(receipient: @user, actor: current_user, action: 'accepted')
     redirect_back_or_to root_path
   end
 
