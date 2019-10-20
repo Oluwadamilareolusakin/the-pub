@@ -46,24 +46,6 @@ nav {
     font-family: "Nunito", sans-serif;
     flex-flow: row nowrap; }
 
-input[type="text"] {
-  width: 100%;
-  font-size: .7em;
-  border: none;
-  padding: 0 .6em;
-  margin-right: .5em;
-  border-bottom: 1.5px solid #00aeff; }
-  input[type="text"]:focus {
-    outline: none; }
-
-input[type="submit"] {
-  background-color: #00aeff;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: .7em;
-  padding: .2em 1em; }
-
 .alert {
   z-index: 9;
   position: fixed;
