@@ -62,22 +62,21 @@
       text-decoration: underline;
       color: #00aeff; }
 
-.requests {
-  margin-right: .4em; }
-  .requests .user-card-avatar {
-    width: 40px;
-    height: 40px; }
-  .requests a {
-    font-size: .7em; }
-  .requests .request-user-info {
-    align-items: center; }
-  .requests .placeholder-request {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: grey; }
-  .requests p {
-    font-size: .7em; }
+.requests .user-card-avatar {
+  width: 40px;
+  height: 40px; }
+.requests a {
+  font-size: .7em; }
+.requests .request-user-info {
+  margin-right: .3em;
+  align-items: center; }
+.requests .placeholder-request {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: grey; }
+.requests p {
+  font-size: .7em; }
 
 .timeline-center {
   align-self: flex-start;
