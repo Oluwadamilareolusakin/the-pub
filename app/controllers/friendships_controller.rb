@@ -26,7 +26,9 @@ class FriendshipsController < ApplicationController
     flash[:notice] = "You are no longer friends with #{@user.name}"
     @user.unfriend(current_user)
     current_user.unfriend(@user)
+    return unless @friendship_1
     @friendship_1.destroy
+    return unless @friendship_2
     @friendship_2.destroy
     redirect_back_or_to root_path
   end
