@@ -10,6 +10,7 @@ A social networking site where you can connect with old friends, make new ones a
 * Accepting or declining friend requests
 * Commenting on posts
 * Liking posts
+* Sign in and Sign up with Github or Facebook
 
 # Use
 * Feel free to clone or fork the project. 
