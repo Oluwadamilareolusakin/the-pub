@@ -23,6 +23,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    return unless @comment
     @comment.destroy
     flash[:success] = 'Your comment was deleted'
     redirect_back_or_to root_path
