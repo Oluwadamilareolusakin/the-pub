@@ -262,11 +262,7 @@ Devise.setup do |config|
   config.omniauth :github, '3a810d33ba0048fc5ea9', '4f6849819451312b4b957d77f424adb7d67b5bb2', scope: 'user:email'
   config.omniauth :facebook, "2362050907444041", "6a963d37483c7676d048831429725de5",
                 scope: 'public_profile,email',
-                info_fields: 'email,first_name,last_name,gender,birthday,location,picture',
-                client_options: {
-                    site: 'https://graph.facebook.com/v2.11',
-                    authorize_url: "https://www.facebook.com/v2.11/dialog/oauth"
-                }
+                info_fields: 'email,name',
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
