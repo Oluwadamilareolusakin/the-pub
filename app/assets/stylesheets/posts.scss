@@ -256,10 +256,14 @@
 }
 
 %friendship-btn{
-  font-size: .6em;
   padding: .3em .9em;
   color: white;
   border-radius: 5px;
+  font-size: 1em;
+
+  @media #{$mq-medium}{
+    font-size: .6em;
+  }
 }
 
 .friendship-btn{

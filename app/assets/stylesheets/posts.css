@@ -176,10 +176,13 @@
   height: 50px; }
 
 .friendship-btn, .cancel-friendship {
-  font-size: .6em;
   padding: .3em .9em;
   color: white;
-  border-radius: 5px; }
+  border-radius: 5px;
+  font-size: 1em; }
+  @media (min-width: 64em) {
+    .friendship-btn, .cancel-friendship {
+      font-size: .6em; } }
 
 .friendship-btn {
   background-color: #00aeff; }
