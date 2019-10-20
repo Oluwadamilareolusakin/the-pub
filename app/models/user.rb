@@ -78,12 +78,6 @@ class User < ApplicationRecord
     end
   end
 
-  def unlike(like)
-    return unless likes.include?(likes)
-
-    likes.delete(like)
-  end
-
   def likes?(like)
     likes.include?(like)
   end
