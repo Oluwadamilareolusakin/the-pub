@@ -1,4 +1,4 @@
 <%= form_for(current_user.posts.build) do |f| %>
-  <%= f.text_field :content, placeholder: 'Pub something...' %>
+  <%= f.text_area :content, placeholder: 'Pub something...' %>
   <%= f.submit "Pub"%>
 <% end %>

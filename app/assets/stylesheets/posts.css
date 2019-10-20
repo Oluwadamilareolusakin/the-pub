@@ -4,7 +4,7 @@
 
 .timeline-left {
   font-family: "Nunito", sans-serif;
-  width: 20%;
+  width: 30%;
   background-color: white;
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.163);
   align-self: flex-start;
@@ -13,15 +13,26 @@
   padding-bottom: 2em;
   overflow-y: scroll;
   z-index: 2; }
+  @media (min-width: 64em) {
+    .timeline-left {
+      width: 20%; } }
   .timeline-left .user-details {
     align-items: center;
     justify-content: center; }
     .timeline-left .user-details span {
-      font-size: .8em;
+      font-size: 1em;
       margin-left: .3em; }
+      @media (min-width: 64em) {
+        .timeline-left .user-details span {
+          font-size: .8em; } }
   .timeline-left .stats-section {
     color: grey;
-    font-size: .7em; }
+    font-size: .9em; }
+    .timeline-left .stats-section .user-stat span {
+      color: #00aeff; }
+    @media (min-width: 64em) {
+      .timeline-left .stats-section {
+        font-size: .7em; } }
   .timeline-left .post-creation-holder {
     width: 100%;
     border-radius: 5px;
@@ -31,13 +42,16 @@
       width: 100%;
       flex-direction: column;
       display: flex; }
-      .timeline-left .post-creation-holder form input[type="text"] {
+      .timeline-left .post-creation-holder form textarea {
         width: 100%;
         border-radius: 5px;
-        padding: .3em .5em;
+        padding: .3em 0 5em .5em;
         background-color: #eeeeee;
         border: none;
-        font-size: .8em; }
+        font-size: 1.2em; }
+        @media (min-width: 64em) {
+          .timeline-left .post-creation-holder form textarea {
+            font-size: .8em; } }
       .timeline-left .post-creation-holder form input[type="submit"] {
         padding: .2em 1em;
         border: none;
@@ -52,10 +66,15 @@
           background-color: #1b94fd;
           cursor: pointer; }
   .timeline-left .request-section-header {
-    font-size: .5em;
+    font-size: .8em;
     font-family: "Be Vietnam", sans-serif;
     width: 100%;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-bottom: 1em; }
+    @media (min-width: 64em) {
+      .timeline-left .request-section-header {
+        font-size: .5em;
+        margin-bottom: 0; } }
     .timeline-left .request-section-header .view-all-link {
       width: 50%;
       justify-content: flex-end;
@@ -66,7 +85,10 @@
   width: 40px;
   height: 40px; }
 .requests a {
-  font-size: .7em; }
+  font-size: 1em; }
+  @media (min-width: 64em) {
+    .requests a {
+      font-size: .7em; } }
 .requests .request-user-info {
   margin-right: .3em;
   align-items: center; }
@@ -84,8 +106,11 @@
   overflow: hidden;
   height: 100vh;
   overflow-y: scroll;
-  width: 60%;
-  background-color: rgba(246, 246, 246, 0.68); }
+  background-color: rgba(246, 246, 246, 0.68);
+  width: 70%; }
+  @media (min-width: 64em) {
+    .timeline-center {
+      width: 60%; } }
   .timeline-center .posts-holder {
     background-color: white;
     width: 80%; }
@@ -113,7 +138,11 @@
   width: 20%;
   overflow-y: scroll;
   padding: 1em 1em;
-  z-index: 1; }
+  z-index: 1;
+  display: none; }
+  @media (min-width: 64em) {
+    .timeline-right {
+      display: initial; } }
   .timeline-right .friend-requests {
     font-family: "Be Vietnam", sans-serif; }
     .timeline-right .friend-requests .requests-heading {

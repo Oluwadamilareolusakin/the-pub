@@ -6,29 +6,46 @@
 
 .timeline-left{
   font-family: $aux-font;
-  width: 20%;
+  width: 30%;
   background-color: rgb(255, 255, 255);
   box-shadow: $main-box-shadow;
   align-self: flex-start;  
   height: 100vh;
-
   padding: $section-padding;
   padding-bottom: 2em;
   overflow-y: scroll;
   z-index: 2;
 
+  @media #{$mq-medium}{
+    width: 20%;
+  }
+
   .user-details{
     align-items: center;
     justify-content: center;
     span{
-      font-size: .8em;
+      font-size: 1em;
       margin-left: .3em;
+      
+      @media #{$mq-medium}{
+        font-size: .8em;
+      }
     }
   }
 
   .stats-section{
-     color: grey;
-     font-size: .7em;
+     color: grey; 
+     font-size: .9em;
+
+     .user-stat{
+       span{
+         color: $main-accent;
+       }
+     }
+
+     @media #{$mq-medium}{
+       font-size: .7em;
+     }
   }
 
   .post-creation-holder{
@@ -42,13 +59,18 @@
       width: 100%;
       flex-direction: column;
       display: flex;
-      input[type = "text"]{
+
+      textarea{
         width: 100%;
         border-radius: 5px;
-        padding: .3em .5em;
+        padding: .3em 0 5em .5em;
         background-color: $main-grey;
         border: none;
-        font-size: .8em;
+        font-size: 1.2em;
+
+        @media #{$mq-medium}{
+          font-size: .8em;
+        }
       }
 
       input[type = "submit"]{
@@ -73,10 +95,16 @@
   }
 
   .request-section-header{
-    font-size: .5em;
+    font-size: .8em;
     font-family: $primary-font;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 1em;
+
+    @media #{$mq-medium}{
+      font-size: .5em;
+      margin-bottom: 0;
+    }
 
     .view-all-link{
       width: 50%;
@@ -96,7 +124,11 @@
   }
   
   a{
-    font-size: .7em;
+    font-size: 1em;
+    
+    @media #{$mq-medium}{
+      font-size: .7em;
+    }
   }
   
   .request-user-info{
@@ -122,9 +154,12 @@
   overflow: hidden;
   height: 100vh;
   overflow-y: scroll;
-  width: 60%;
   background-color: rgba(246, 246, 246, 0.68);
+  width: 70%;
   
+  @media #{$mq-medium}{
+    width: 60%;
+  }
   .posts-holder{
     background-color: rgb(255, 255, 255);
     width: 80%;
@@ -164,13 +199,20 @@
   overflow-y: scroll;
   padding: $section-padding;
   z-index: 1;
+  display: none;
+
+  @media #{$mq-medium}{
+    display: initial;
+  }
   
   .friend-requests{
     font-family: $primary-font;
+
     .requests-heading{
       color: $main-accent;
       font-size: .7em;
     }
+
     .suggestions{
       width: 100%;
       .suggestion{
