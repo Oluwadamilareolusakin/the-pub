@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/posts', to: 'posts#timeline'
   
   resources :friendships, only: %i[create destroy]
-  resources :friend_requests, only: %i[create destroy]
+  resources :friend_requests, only: %i[create destroy show]
   resources :notifications, only: %i[ create destroy index] do
     collection do
       post :mark_as_read
