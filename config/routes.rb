@@ -17,9 +17,13 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[ destroy create show] do
     resources :comments, module: :posts
-    resources :likes, module: :posts, only: %i[create index destroy]
+    resources :likes, module: :posts, only: %i[create destroy]
   end
-
+  
+  resources :comments do
+    resources :likes, module: :comments, only: %i[create destroy]
+  end
+  
   get '/posts', to: 'posts#timeline'
   
   resources :friendships, only: %i[create destroy]
