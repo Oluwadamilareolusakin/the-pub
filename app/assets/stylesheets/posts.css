@@ -195,6 +195,27 @@
 .post.column .comment-form-holder {
   padding: .8em 0; }
 
+.input-file {
+  z-index: -1;
+  width: .1px;
+  height: .1px;
+  position: absolute; }
+
+.input-file-label {
+  background-color: white;
+  color: #00aeff;
+  font-size: .7em;
+  border: 2px solid #00aeff;
+  width: 30%;
+  text-align: center;
+  margin-top: .5em;
+  border-radius: 5px;
+  transition: .25s; }
+  .input-file-label:hover {
+    cursor: pointer;
+    background-color: #00aeff;
+    color: white; }
+
 .comment-form-holder {
   padding: .8em 2em; }
   .comment-form-holder .comment-form form textarea {
