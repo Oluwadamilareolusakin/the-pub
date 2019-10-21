@@ -11,7 +11,8 @@ module PostsHelper
 
   def comment_like_button(comment)
     if likes?(comment)
-      link_to fa_icon('heart'), comment_likes_path(comment, id: current_user.id), method: :delete, class: 'like-filled-btn'
+      link_to fa_icon('heart'), comment_likes_path(comment, id: current_user.id),
+              method: :delete, class: 'like-filled-btn'
     else
       link_to fa_icon('heart-o'), comment_likes_path(comment), method: :post, class: 'like-outlined-btn'
     end
@@ -41,8 +42,8 @@ module PostsHelper
   end
 
   def post_image(post)
-    if post.image.attached? 
-       image_tag url_for(post.image), class: 'post-image' 
-    end 
+    return unless post.image.attached?
+
+    image_tag url_for(post.image), class: 'post-image'
   end
 end
