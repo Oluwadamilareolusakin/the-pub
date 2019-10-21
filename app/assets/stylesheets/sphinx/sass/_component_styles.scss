@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Be+Vietnam|Nunito|Raleway|Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Be+Vietnam|Nunito|Raleway|Rubik&display=swap');
 
 //Breaking Points
 
@@ -37,6 +37,7 @@ $base-column-width: ($small-bp/24);
 
 //Colors
 $light-grey:  #f5f5f5f6;
+$main-grey: rgb(238, 238, 238);
 $main-accent: rgb(0, 174, 255);
 $aux-accent: rgb(35, 35, 35);
 $primary-color: rgb(0, 59, 141);
@@ -51,11 +52,13 @@ $secondary-black:rgb(24, 24, 24);
 $main-bg-color: teal;
 $primary-grey: rgb(160, 160, 160);
 
+$main-box-shadow: 0 0 5px .5px rgba(0, 0, 0, 0.163);
+
 // $primary-font: 'Montserrat', sans-serif;
 $primary-font: 'Be Vietnam', sans-serif;
 
 $secondary-font: 'Rubik', sans-serif;
-// $aux-font: 'Share Tech Mono', monospace;
+$logo-font: 'Baloo Bhai', cursive;
 $aux-font: 'Nunito', sans-serif;
 
 $medium-paragraph-font-size: 3em;
@@ -71,7 +74,7 @@ $paragraph-line-height: 1.2em;
     line-height: (1.5em * $line-height);
 }
 
-$section-padding: 0em 0 0 7em;
+$section-padding: 1em 1em;
 
 $btn-padding: .8em 1em;
 $btn-font-size: 2.9em; 

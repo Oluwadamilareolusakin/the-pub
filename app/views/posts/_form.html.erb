@@ -1,0 +1,6 @@
+<%= form_for(current_user.posts.build) do |f| %>
+  <%= f.text_area :content, placeholder: 'Pub something...' %>
+  <%= f.label :image, "Photo+", class: "input-file-label" %>
+  <%= f.file_field :image, class: 'input-file'%>
+  <%= f.submit "Pub"%>
+<% end %>

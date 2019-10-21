@@ -6,6 +6,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @requesteds = @user.requesteds.first(4)
+    @requesters = @user.requesters.first(4)
+    @suggestions = User.all.shuffle[0..4]
+    @posts = @user.posts
+    @friends = @user.friends.first(4)
   end
 
   def friends; end

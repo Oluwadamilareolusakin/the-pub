@@ -4,11 +4,18 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show destroy]
   before_action :authenticate_user!
   before_action :store_url
-
-  
-  def show; end
+  before_action :suggestions, only: %i[timeline]
+  def show
+    @comment = Comment.new
+  end
 
   def create
+    if params[:post][:content].empty? && params[:post][:image].nil?
+      flash[:notice] = 'Nice try! Type something before you Pub'
+      redirect_back_or_to root_path
+      return
+    end
+
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:notice] = 'Which came first? The pub or the post :)'
@@ -17,13 +24,17 @@ class PostsController < ApplicationController
       redirect_back_or_to root_path
     end
   end
-  
+
   def timeline
     @posts = Post.all
     @comment = Comment.new
+    @requesteds = current_user.requesteds.first(4)
+    @requesters = current_user.requesters.first(4)
+    @friends = current_user.friends.shuffle[0..4]
   end
-  
+
   def destroy
+    return unless @post
     @post.destroy
     flash[:success] = 'We hate to see your post go!'
     redirect_back_or_to root_path
@@ -32,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :image)
   end
 
   def set_post

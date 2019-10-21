@@ -9,6 +9,6 @@ class NotificationsController < ApplicationController
   def mark_as_read
     @notifications = Notification.where(receipient: current_user).unread
     @notifications.update_all(read_at: Time.zone.now)
-    render json: {success: true}
+    render json: { success: true }
   end
 end

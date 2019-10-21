@@ -1,11 +1,52 @@
-<% if not_same_user(@user) %>
-  <% if  current_user.friend_request_with?(@user) && !current_user.friends_with(@user) && !current_user.requester?(@user)%>
-    <%= link_to  "Accept Friend Request", friendships_path(id: @user), method: :post %>
-  <% elsif !current_user.friend_request_with?(@user) %>
-    <%= link_to  "Send Friend Request", friend_requests_path(id: @user), method: :post %>
-  <% elsif !current_user.friends_with(@user) && current_user.requester?(@user)%>
-    <%= link_to  "Cancel Request", friend_request_path(id: @user), method: :delete %>
-  <% elsif current_user.friends_with(@user) %>
-    <%= link_to  "Unfriend", friendship_path(id: @user), method: :delete %>
+<div class="user-profile">
+
+  <% if @user.header.attached? %>
+  <div class="profile-header" style="background-image: <%=url_for(@user.header)%>">
+  <% else %>
+    <div class="profile-header">
   <% end %>
-<% end %>
+    <div class="user-profile-avatar">
+      <%= user_avatar(@user) %> 
+    </div>
+  </div>
+  <div class="profile-data-controls row">
+    <div class="inner-profile-controls row">
+      <div class="profile-controls-left">
+        <div class="user-details column">
+          <span class="user-name">
+            <%= @user.name %>
+          </span>
+          <span class="joined-date">
+            Joined <%= "#{@user.created_at.day}/#{@user.created_at.month}/#{@user.created_at.year}" %>
+          </span>
+        </div>
+      </div>
+      <div class="profile-controls-center row">
+        <span class="number-of-friends user-metric column">
+          <span>Friends</span>
+          <%= @user.friends.count %>
+        </span>
+        <span class="number-of-posts user-metric column">
+          <span>Posts</span>
+          <%= @user.posts.count %>
+        </span>
+        <span class="number-of-comments user-metric column">
+          <span>Comments</span>
+          <%= @user.comments.count %>
+        </span>
+      </div>
+      <div class="profile-controls-right user-metric row">
+        <% if !not_same_user(@user) %>
+          <%= link_to  "Edit Profile", edit_user_registration_path(@user), class: 'edit-user-btn' %>
+        <% end %>
+        <%= friendship_button(@user) %>
+      </div>
+    </div>
+  </div>
+  <div class="posts-holder">
+    <% @posts.each do |post| %>
+      <%= render  "shared/post", post: post %>
+      <hr>
+    <% end %>
+  </div>
+</div>

@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_one_attached :avatar
+  has_one_attached :header
 
   # has_many
   has_many :posts, dependent: :destroy
@@ -17,7 +18,7 @@ class User < ApplicationRecord
   has_many :received_notifications, through: :notifications, source: :receipient
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :trackable, 
+         :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, :trackable,
          omniauth_providers: %i[facebook github]
 
   # validationss
@@ -28,7 +29,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name
-      user.avatar = auth.info.image
+      # user.avatar = auth.info.image
       user.skip_confirmation!
     end
   end
@@ -54,7 +55,7 @@ class User < ApplicationRecord
   end
 
   def request_friendship_with(user)
-    requesteds << user
+    requesteds << user unless self.friend_request_with?(user)
   end
 
   def friend_request_with?(user)
@@ -75,5 +76,9 @@ class User < ApplicationRecord
     elsif requesters.include?(user)
       requesters.delete(user)
     end
+  end
+
+  def likes?(like)
+    likes.include?(like)
   end
 end

@@ -1,10 +1,24 @@
-<nav class="navigation">
-  <div class="notifications-dropdown dropdown-menu" data-behaviour = "notifications">
-    <i data-behaviour="notifications-btn" type="button">
-      <%= fa_icon 'bell', class: 'notifications-icon' %> <span data-behaviour="unread-count"></span>
-    </i>
-    <div class="dropdown-items column" data-behaviour="notification-items">
-        
+<% if controller_name != 'sessions' && controller_name != 'registrations' && controller_name != 'passwords' && controller_name != 'confirmations' %>
+  <nav class="navigation row">
+    <div class="logo">
+      <%= logo_link %>
     </div>
-  </div>
-</nav>
+    <div class="nav-right row">
+      <div class="nav-btns row">
+        <% if current_user %>
+        <%= link_to  "Profile", profile_path(current_user), class: 'nav-btn' %>
+        <div class="notifications-dropdown dropdown-menu nav-btn" data-behaviour = "notifications">
+          <i data-behaviour="notifications-btn" type="button" class="notifications-btn">
+            <%= fa_icon 'bell', class: 'notifications-icon' %> <span class="unread-count" data-behaviour="unread-count"></span>
+          </i>
+          <div class="dropdown-items" data-behaviour="notification-items">
+            
+          </div>
+        </div>
+          <%= link_to  "Sign out", sign_out_path, class: 'nav-btn sign-out-btn' %>
+        <% end %>
+        
+      </div>
+    </div>
+  </nav>
+<% end %>
