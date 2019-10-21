@@ -94,11 +94,17 @@
     margin: 2em auto;
     width: 50%;
   } 
-
+  
   .post{
     padding: 1em 2em 0em 2em;
     justify-content: flex-start;
     
+
+    .post-image{
+      width: 100%;
+      height: auto;
+      background-position: center;
+    }
     .post-user-details{
       padding-left: .5em;
 
