@@ -1,5 +1,20 @@
 <% @post.comments.each do |comment| %>
-  <p class="post-comment">
-    <%= comment.content %>
-  </p>
-<% end %>}
+  <div class="post row">
+    <div>
+      <%= user_avatar(comment.user) %>
+    </div>
+    <div>
+      <p><%= comment.user.name %> <span class="post-created-at"><%= time_ago_in_words(@post.created_at) %></span></p>
+      <p class="post-comment">
+        <%= comment.content %>
+      </p>
+      <p class="post-action">
+        <%= comment_like_button(comment) %> 
+        <span class="count">
+          <%= comment.likes.count %>
+        </span>
+      </p>
+    </div>
+  </div>
+  <hr>
+<% end %>
