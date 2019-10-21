@@ -68,6 +68,10 @@
         border: none;
         font-size: 1.2em;
 
+        &:hover, &:focus{
+          background-color: white;
+        }
+
         @media #{$mq-medium}{
           font-size: .8em;
         }
@@ -276,6 +280,12 @@
   background-color: salmon;
 }
 
+.post.column{
+  .comment-form-holder{
+    padding: .8em 0;
+  }
+}
+
 .comment-form-holder{
   padding: .8em 2em;
   .comment-form{
@@ -285,9 +295,9 @@
         padding: .5em .5em 4em .5em;
         border: none;
         background-color: rgba(188, 188, 188, 0.582);
-        transition: .25s;
+        transition: .15s;
 
-        &:focus{
+        &:focus, &:hover{
           background-color: white;
         }
       }

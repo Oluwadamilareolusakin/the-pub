@@ -49,6 +49,8 @@
         background-color: #eeeeee;
         border: none;
         font-size: 1.2em; }
+        .timeline-left .post-creation-holder form textarea:hover, .timeline-left .post-creation-holder form textarea:focus {
+          background-color: white; }
         @media (min-width: 64em) {
           .timeline-left .post-creation-holder form textarea {
             font-size: .8em; } }
@@ -190,6 +192,9 @@
 .cancel-friendship {
   background-color: salmon; }
 
+.post.column .comment-form-holder {
+  padding: .8em 0; }
+
 .comment-form-holder {
   padding: .8em 2em; }
   .comment-form-holder .comment-form form textarea {
@@ -197,8 +202,8 @@
     padding: .5em .5em 4em .5em;
     border: none;
     background-color: rgba(188, 188, 188, 0.582);
-    transition: .25s; }
-    .comment-form-holder .comment-form form textarea:focus {
+    transition: .15s; }
+    .comment-form-holder .comment-form form textarea:focus, .comment-form-holder .comment-form form textarea:hover {
       background-color: white; }
   .comment-form-holder .comment-form form input {
     width: 100%;
