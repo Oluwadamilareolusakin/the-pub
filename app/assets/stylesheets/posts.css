@@ -214,10 +214,10 @@
   .comment-form-holder .comment-form form textarea, .comment-form-holder .comment-form form input {
     border-radius: 5px; }
 
-.comment-filled-btn {
+.like-filled-btn {
   color: #00aeff; }
 
-.comment-outlined-btn {
+.like-outlined-btn {
   color: #00aeff; }
 
 .post.row {
