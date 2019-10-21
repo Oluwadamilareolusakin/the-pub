@@ -4,8 +4,9 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[destroy]
   before_action :authenticate_user!
 
-  def new
+  def index
     @post = Post.find(params[:post_id])
+    @comments = @post.comments
     @comment = Comment.new
   end
 

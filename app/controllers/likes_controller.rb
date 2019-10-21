@@ -21,10 +21,4 @@ class LikesController < ApplicationController
     @like.destroy
     redirect_back_or_to root_path
   end
-
-  private
-
-  def set_like
-    @like = Like.find_by('likeable_id = ? AND user_id = ?', params[:post_id], params[:id])
-  end
 end

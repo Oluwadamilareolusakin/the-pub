@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :store_url
   before_action :suggestions, only: %i[timeline]
-  def show; end
+  def show
+    @comment = Comment.new
+  end
 
   def create
     if params[:post][:content].empty?
