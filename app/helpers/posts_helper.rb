@@ -39,4 +39,10 @@ module PostsHelper
       content_tag(:div, class: 'placeholder-request')
     end
   end
+
+  def post_image(post)
+    if post.image.attached? 
+       image_tag url_for(post.image), class: 'post-image' 
+    end 
+  end
 end
