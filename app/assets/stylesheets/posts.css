@@ -190,4 +190,39 @@
 .cancel-friendship {
   background-color: salmon; }
 
+.comment-form-holder {
+  padding: .8em 2em; }
+  .comment-form-holder .comment-form form textarea {
+    width: 100%;
+    padding: .5em .5em 4em .5em;
+    border: none;
+    background-color: rgba(188, 188, 188, 0.582);
+    transition: .25s; }
+    .comment-form-holder .comment-form form textarea:focus {
+      background-color: white; }
+  .comment-form-holder .comment-form form input {
+    width: 100%;
+    color: white;
+    background-color: #00aeff;
+    border: none;
+    padding: .5em 0;
+    font-size: .9em;
+    transition: .25s; }
+    .comment-form-holder .comment-form form input:hover {
+      cursor: pointer;
+      background-color: #4f96e2; }
+  .comment-form-holder .comment-form form textarea, .comment-form-holder .comment-form form input {
+    border-radius: 5px; }
+
+.comment-filled-btn {
+  color: #00aeff; }
+
+.comment-outlined-btn {
+  color: #00aeff; }
+
+.post.row {
+  align-items: flex-start; }
+  .post.row .user-card-avatar {
+    margin-right: .6em; }
+
 /*# sourceMappingURL=posts.css.map */
