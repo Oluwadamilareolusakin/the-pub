@@ -13,5 +13,6 @@ class Post < ApplicationRecord
   has_many :notifications, as: :notifyable
 
   # validations
-  validates :content, presence: true
+  validates :content, presence: true, unless: :image
+  validates :image, presence: true, unless: :content
 end

@@ -68,6 +68,10 @@
         border: none;
         font-size: 1.2em;
 
+        &:hover, &:focus{
+          background-color: white;
+        }
+
         @media #{$mq-medium}{
           font-size: .8em;
         }
@@ -276,6 +280,37 @@
   background-color: salmon;
 }
 
+.post.column{
+  .comment-form-holder{
+    padding: .8em 0;
+  }
+}
+
+.input-file{
+  z-index: -1;
+  width: .1px;
+  height: .1px;
+  position: absolute;
+}
+
+.input-file-label{
+  background-color: white;
+  color: $main-accent;
+  font-size: .7em;
+  border: 2px solid $main-accent;
+  width: 30%;
+  text-align: center;
+  margin-top: .5em;
+  border-radius: 5px;
+  transition: .25s;
+
+  &:hover{
+    cursor: pointer;
+    background-color: $main-accent;
+    color: white;
+  }
+}
+
 .comment-form-holder{
   padding: .8em 2em;
   .comment-form{
@@ -285,9 +320,9 @@
         padding: .5em .5em 4em .5em;
         border: none;
         background-color: rgba(188, 188, 188, 0.582);
-        transition: .25s;
+        transition: .15s;
 
-        &:focus{
+        &:focus, &:hover{
           background-color: white;
         }
       }

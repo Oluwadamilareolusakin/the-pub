@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    if params[:post][:content].empty?
+    if params[:post][:content].empty? && params[:post][:image].nil?
       flash[:notice] = 'Nice try! Type something before you Pub'
       redirect_back_or_to root_path
       return
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :image)
   end
 
   def set_post

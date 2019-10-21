@@ -71,6 +71,10 @@
   .posts-holder .post {
     padding: 1em 2em 0em 2em;
     justify-content: flex-start; }
+    .posts-holder .post .post-image {
+      width: 100%;
+      height: auto;
+      background-position: center; }
     .posts-holder .post .post-user-details {
       padding-left: .5em; }
       @media (min-width: 64em) {
