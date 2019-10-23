@@ -195,6 +195,14 @@ div.open-dropdown{
   }
 }
 
+a.relationship-btn{
+  font-size: .8em;
+  padding: .3em .9em;
+
+  @media #{$mq-medium}{
+    font-size: .6em;
+  }
+}
 .placeholder-user{
   width: 40px;
   height: 40px;

@@ -57,16 +57,6 @@
       align-items: center;
       padding-right: 2em;
       color: white;
-      
-      .edit-user-btn{
-        background-color: $main-accent;
-        font-size: 1em;
-        padding: .3em .9em;
-        border-radius: 5px;
-
-        @media #{$mq-medium}{
-          font-size: .6em;
-        }
       }
     }
   }
@@ -81,8 +71,8 @@
       width: 200px;
       height: 200px;
     }
-  }
 }
+
 .posts-holder{
   width: 70%;
   margin: 3em auto;

@@ -146,6 +146,13 @@ div.open-dropdown {
       .users .user .user-card-body .cancel-friendship, .users .user .user-card-body .friendship-btn {
         margin-top: 2em; }
 
+a.relationship-btn {
+  font-size: .8em;
+  padding: .3em .9em; }
+  @media (min-width: 64em) {
+    a.relationship-btn {
+      font-size: .6em; } }
+
 .placeholder-user {
   width: 40px;
   height: 40px;

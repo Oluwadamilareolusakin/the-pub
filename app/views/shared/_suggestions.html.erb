@@ -6,10 +6,10 @@
           <%= user_avatar(suggestion)%> 
         </div>
         <div class="suggestion-actions column">
-          <%= link_to  suggestion.name, profile_path(suggestion) %>
-        <div data-behaviour = "<%= suggestion.id%>">
-          <%= friendship_button(suggestion) %>
-        </div>
+          <%= link_to  suggestion.name, profile_path(suggestion), class: 'profile-link row' %>
+          <div data-behaviour = "<%= suggestion.id%>">
+            <%= friendship_button(suggestion) %>
+          </div>
         </div>
       </div>  
       <hr>
