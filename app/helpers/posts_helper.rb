@@ -3,8 +3,8 @@
 module PostsHelper
   def post_like_button(post)
     if likes?(post)
-      link_to fa_icon('heart'), post_like_path(post, id: current_user.id), method: :delete,
-              class: 'like-filled-btn', remote: true
+      link_to fa_icon('heart'), post_like_path(post, id: current_user.id),
+              method: :delete, class: 'like-filled-btn', remote: true
     else
       link_to fa_icon('heart-o'), post_likes_path(post), method: :post, class: 'like-outlined-btn', remote: true
     end
@@ -13,7 +13,7 @@ module PostsHelper
   def comment_like_button(comment)
     if likes?(comment)
       link_to fa_icon('heart'), comment_like_path(comment, id: current_user.id),
-                                                                                method: :delete, class: 'like-filled-btn', remote: true
+                method: :delete, class: 'like-filled-btn', remote: true
     else
       link_to fa_icon('heart-o'), comment_likes_path(comment), method: :post, class: 'like-outlined-btn', remote: true
     end
