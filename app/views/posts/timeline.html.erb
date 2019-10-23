@@ -1,0 +1,74 @@
+<div class="timeline row">
+  <div class="timeline-left">
+    <div class="user-details row">
+      <%= user_avatar(current_user) %> 
+      <span>
+        <%= current_user.name %>
+      </span>
+    </div>
+    
+    <div class="post-creation-holder">
+        <%= render  "form" %>
+    </div>
+
+    <hr>
+
+    <%= render  "stats" %>
+    
+    <hr>
+    
+    <div class="friend-requests-sent friend-requests">
+      <div class="request-section-header row">
+        <h3 class="requests-heading">YOUR FRIENDS</h3> 
+        <div class="view-all-link row">
+          <%= link_to  "VIEW ALL", friends_path%>
+        </div>
+      </div>
+      <%= render  "shared/user_list", users: @friends, object: 'friends' %>
+    </div>
+
+    <hr>
+      
+    <div class="friend-requests-sent friend-requests">
+      <div class="request-section-header row">
+          <h3 class="requests-heading">REQUESTS SENT</h3> 
+          <div class="view-all-link row">
+            <%= link_to  "VIEW ALL", requesteds_path%>
+          </div>
+      </div>
+      <%= render  "shared/user_list", users: @requesteds, object: 'requests' %>
+    </div>
+
+    <hr>
+    <div class="friend-requests-received friend-requests">
+      <div class="request-section-header row">
+        <h3 class="requests-heading">REQUESTS RECEIVED</h3> 
+        <div class="view-all-link row">
+          <%= link_to  "VIEW ALL", requesters_path%>
+        </div>
+      </div>
+      <%= render "shared/user_list", users: @requesters, object: 'requests' %>
+    </div>
+  </div>
+    
+  <div class="timeline-center">
+    <%= render  "layouts/mini_nav" %>
+    <div class="posts-holder">
+      <% @posts.each do |post|%>
+        <%= render 'shared/post', post: post %>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="timeline-right">
+     <div class="friend-requests friend suggestions">
+       <div class="request-section-header row">
+         <h3 class="requests-heading">
+          FRIEND SUGGESTIONS
+         </h3>
+        </div>
+        <%= render "shared/suggestions", suggestions: @suggestions %>
+     </div>
+  </div>
+</div>

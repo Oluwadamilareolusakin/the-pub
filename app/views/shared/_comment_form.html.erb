@@ -1,0 +1,10 @@
+<div class="comment-form">
+  <%= form_for [post, @comment] do |f| %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: 'Write a comment...' %>
+    </div>
+    <div class="action">
+      <%= f.submit "Comment"%>
+    </div>
+  <% end %>
+</div>

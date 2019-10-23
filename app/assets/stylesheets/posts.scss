@@ -1,0 +1,367 @@
+@import 'sphinx/sass/component_styles';
+
+.timeline{
+  justify-content: center;
+}
+
+.timeline-left{
+  font-family: $aux-font;
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: $main-box-shadow;
+  align-self: flex-start;  
+  height: 100vh;
+  padding: $section-padding;
+  padding-bottom: 2em;
+  overflow-y: scroll;
+  z-index: 2;
+
+  @media #{$mq-medium}{
+    width: 20%;
+  }
+
+  .user-details{
+    align-items: center;
+    justify-content: center;
+    span{
+      font-size: 1em;
+      margin-left: .3em;
+      
+      @media #{$mq-medium}{
+        font-size: .8em;
+      }
+    }
+  }
+
+  .stats-section{
+     color: grey; 
+     font-size: .9em;
+
+     .user-stat{
+       span{
+         color: $main-accent;
+       }
+     }
+
+     @media #{$mq-medium}{
+       font-size: .7em;
+     }
+  }
+
+  .post-creation-holder{
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 1em;
+    background-color: white;
+  
+   
+    form{
+      width: 100%;
+      flex-direction: column;
+      display: flex;
+
+      textarea{
+        width: 100%;
+        border-radius: 5px;
+        padding: .3em 0 5em .5em;
+        background-color: $main-grey;
+        border: none;
+        font-size: 1.2em;
+
+        &:hover, &:focus{
+          background-color: white;
+        }
+
+        @media #{$mq-medium}{
+          font-size: .8em;
+        }
+      }
+
+      input[type = "submit"]{
+        padding: .2em 1em;
+        border: none;
+        border-radius: 5px;
+        background: 0 0;
+        color: white;
+        background-color: $main-accent;
+        transition: .25s;
+        margin-top: .5em;
+        font-size: .9em;  
+
+        &:hover{
+          background-color: rgb(27, 148, 253);
+          cursor: pointer;
+        }
+      }
+        
+    }
+  
+  }
+
+  .request-section-header{
+    font-size: .8em;
+    font-family: $primary-font;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1em;
+
+    @media #{$mq-medium}{
+      font-size: .5em;
+      margin-bottom: 0;
+    }
+
+    .view-all-link{
+      width: 50%;
+      justify-content: flex-end;
+      text-decoration: underline;
+      color: $main-accent;
+    }
+  }
+  
+}
+
+
+.requests{
+  .user-card-avatar{
+    width: 40px;
+    height: 40px;
+  }
+  
+  a{
+    font-size: 1em;
+    
+    @media #{$mq-medium}{
+      font-size: .7em;
+    }
+  }
+  
+  .request-user-info{
+    margin-right: .3em;
+    align-items: center;
+  }
+
+  .placeholder-request{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: grey;
+  }
+
+  p{
+    font-size: .7em;
+  }
+}
+
+.timeline-center{
+  align-self: flex-start;  
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(246, 246, 246, 0.68);
+  width: 70%;
+  
+  @media #{$mq-medium}{
+    width: 60%;
+  }
+  .posts-holder{
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+  }  
+
+  input[type = "text"]{
+    width: 100%;
+    font-size: .7em;
+    border: none;
+    padding: 0 .6em;
+    margin-right: .5em;
+    border-bottom: 1.5px solid $main-accent;
+  
+    &:focus{
+      outline: none;
+    }
+  }
+  
+  input[type = "submit"]{
+    background-color: $main-accent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: .7em;
+    padding: .2em 1em;
+  }
+
+}
+  
+
+
+.timeline-right{
+  box-shadow: $main-box-shadow;
+  background-color: rgb(253, 253, 253);
+  height: 100vh;
+  width: 20%;
+  overflow-y: scroll;
+  padding: $section-padding;
+  z-index: 1;
+  display: none;
+
+  @media #{$mq-medium}{
+    display: initial;
+  }
+  
+  .friend-requests{
+    font-family: $primary-font;
+
+    .requests-heading{
+      color: $main-accent;
+      font-size: .7em;
+    }
+
+    .suggestions{
+      width: 100%;
+      .suggestion{
+        font-size: .7em;
+        margin-top: .5em;
+        img{
+          width: 60px;
+          height: 60px;
+        }
+        .suggestion-actions{
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: none;
+          margin-left: .2em;
+          width: 70%;
+          
+          a.relationship-btn{
+            padding: 0em 2em;
+          }
+        }
+
+        .row{
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          a{
+            margin-top: -1em;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+.user-card-avatar{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+%friendship-btn{
+  padding: .3em .9em;
+  color: white;
+  border-radius: 5px;
+  font-size: 1em;
+
+  @media #{$mq-medium}{
+    font-size: .6em;
+  }
+}
+
+.friendship-btn{
+  @extend %friendship-btn;
+  background-color: $main-accent;
+}
+
+.cancel-friendship{
+  @extend %friendship-btn;
+  background-color: salmon;
+}
+
+.post.column{
+  .comment-form-holder{
+    padding: .8em 0;
+  }
+}
+
+.input-file{
+  z-index: -1;
+  width: .1px;
+  height: .1px;
+  position: absolute;
+}
+
+.input-file-label{
+  background-color: white;
+  color: $main-accent;
+  font-size: .7em;
+  border: 2px solid $main-accent;
+  width: 30%;
+  text-align: center;
+  margin-top: .5em;
+  border-radius: 5px;
+  transition: .25s;
+
+  &:hover{
+    cursor: pointer;
+    background-color: $main-accent;
+    color: white;
+  }
+}
+
+.comment-form-holder{
+  padding: .8em 2em;
+  .comment-form{
+    form{
+      textarea{
+        width: 100%;
+        padding: .5em .5em 4em .5em;
+        border: none;
+        background-color: rgba(188, 188, 188, 0.582);
+        transition: .15s;
+
+        &:focus, &:hover{
+          background-color: white;
+        }
+      }
+
+      input{
+        width: 100%;
+        color: white;
+        background-color: $main-accent;
+        border: none;
+        padding: .5em 0;
+        font-size: .9em;
+        transition: .25s;
+        
+        &:hover{
+          cursor: pointer;
+          background-color: rgb(79, 150, 226);
+        }
+      }
+
+      textarea, input{
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.like-filled-btn{
+  color: $main-accent;
+}
+
+
+.like-outlined-btn{
+  color: $main-accent;
+}
+
+.post.row{
+  align-items: flex-start;
+
+  .user-card-avatar{
+    margin-right: .6em;
+  }
+}

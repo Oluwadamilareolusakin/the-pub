@@ -1,0 +1,18 @@
+<div class="posts-holder">
+  <div class="post ">
+    <div>
+      <%= user_avatar(@post.user) %>
+    </div>
+    <div>
+      <p class="user-name"><%= @post.user.name %> <span class="post-created-at"><%= time_ago_in_words(@post.created_at) %></span></p>
+      <%= post_image(@post) %>
+      <p><%= @post.content %></p>
+    </div>
+  </div>
+  <div class="comment-form-holder">
+    <%= render  "shared/comment_form", post: @post %>
+  </div>
+  <div class="post-comments">
+    <%= render  "comments" %>
+  </div>
+</div>
