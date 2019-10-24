@@ -16,7 +16,10 @@ class FriendshipsController < ApplicationController
     friendship = Friendship.find_by(friend_id: params[:id])
     flash[:success] = "You are now friends with #{@user.name}"
     friendship.notifications.create(receipient: @user, actor: current_user, action: 'accepted')
-    redirect_back_or_to root_path
+    respond_to do |format|
+      format.html { redirect_back_or_to profile_path(@user)}
+      format.js
+    end
   end
 
   def destroy
@@ -30,6 +33,9 @@ class FriendshipsController < ApplicationController
     @friendship_1.destroy
     return unless @friendship_2
     @friendship_2.destroy
-    redirect_back_or_to root_path
+    respond_to do |format|
+      format.html { redirect_back_or_to profile_path(@user)}
+      format.js
+    end
   end
 end

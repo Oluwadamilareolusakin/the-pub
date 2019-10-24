@@ -7,7 +7,9 @@
     <div class="user-card-body column">
       
       <%= link_to user.name, profile_path(user) %>
-      
-      <%= friendship_button(user) %>
+
+      <div data-behaviour = "<%= user.id%>">
+        <%= friendship_button(user) %>
+      </div>
     </div>
   </div>

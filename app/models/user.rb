@@ -42,6 +42,14 @@ class User < ApplicationRecord
     end
   end
 
+
+  def feed
+    friend_ids = "SELECT friend_id FROM FRIENDSHIPS
+                  WHERE user_id = :user_id"
+    Post.where("user_id IN (#{friend_ids})
+                OR user_id = :user_id", user_id: id)
+  end
+
   def become_friends_with(user)
     return if friends.include?(user)
 

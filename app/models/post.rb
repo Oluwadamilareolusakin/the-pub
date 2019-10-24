@@ -15,4 +15,5 @@ class Post < ApplicationRecord
   # validations
   validates :content, presence: true, unless: :image
   validates :image, presence: true, unless: :content
+
 end

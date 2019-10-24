@@ -27,7 +27,9 @@
         <span class="count">
           <%= post.likes.count %>
         </span>
-        <%= post_like_button(post) %>
+        <div data-behaviour = "<%= post.id%>">
+          <%= post_like_button(post) %>
+        </div>
       </div>
     </div>
   </div>

@@ -153,24 +153,22 @@
     .timeline-right .friend-requests .suggestions {
       width: 100%; }
       .timeline-right .friend-requests .suggestions .suggestion {
-        font-size: .7em;
-        margin-top: .5em; }
+        margin-top: .5em;
+        align-items: flex-start; }
+        .timeline-right .friend-requests .suggestions .suggestion a {
+          font-size: .7em; }
         .timeline-right .friend-requests .suggestions .suggestion img {
           width: 60px;
           height: 60px; }
         .timeline-right .friend-requests .suggestions .suggestion .suggestion-actions {
+          vertical-align: top;
           justify-content: flex-start;
           align-items: flex-start;
-          margin: none;
+          margin-top: -.5em;
           margin-left: .2em;
           width: 70%; }
-          .timeline-right .friend-requests .suggestions .suggestion .suggestion-actions a.relationship-btn {
-            padding: 0em 2em; }
-        .timeline-right .friend-requests .suggestions .suggestion .row {
-          align-items: flex-start;
-          justify-content: flex-start; }
-          .timeline-right .friend-requests .suggestions .suggestion .row a {
-            margin-top: -1em; }
+          .timeline-right .friend-requests .suggestions .suggestion .suggestion-actions .profile-link {
+            padding-top: 0; }
 
 .user-card-avatar {
   border-radius: 50%;

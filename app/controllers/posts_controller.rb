@@ -26,11 +26,11 @@ class PostsController < ApplicationController
   end
 
   def timeline
-    @posts = Post.all
+    @posts = current_user.feed.includes(:user, :likes, :comments)
     @comment = Comment.new
-    @requesteds = current_user.requesteds.first(4)
-    @requesters = current_user.requesters.first(4)
-    @friends = current_user.friends.shuffle[0..4]
+    @requesteds = current_user.requesteds.select(:name, :id).first(4)
+    @requesters = current_user.requesters.select(:name, :id).first(4)
+    @friends = current_user.friends.select(:name, :id).first(4)
   end
 
   def destroy
