@@ -13,12 +13,20 @@ class LikesController < ApplicationController
       @likeable.notifications.create(actor: current_user, receipient: @likeable.user, action: "liked your")
     end
     flash[:success] = "You liked #{@likeable.user.name}'s #{@like.likeable_type.downcase}"
-    redirect_back_or_to root_path
+
+    respond_to do |format|
+      format.html { redirect_back_or_to root_path }
+      format.js
+    end
+    
   end
 
   def destroy
     return unless @like
     @like.destroy
-    redirect_back_or_to root_path
+    respond_to do |format|
+      format.html { redirect_back_or_to root_path }
+      format.js
+    end
   end
 end

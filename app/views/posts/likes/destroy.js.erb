@@ -1,0 +1,2 @@
+$("[data-behaviour = <%= params[:post_id]%>]").html("<%=j render 'like', post: @likeable%>")
+$("[data-behaviour = count-<%= params[:post_id]%>]").html(<%= @likeable.likes.count - 1%>)

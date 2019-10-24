@@ -40,20 +40,13 @@
     align-items: center;
     padding-right: 2em;
     color: white; }
-    .user-profile .profile-data-controls .profile-controls-right .edit-user-btn {
-      background-color: #00aeff;
-      font-size: 1em;
-      padding: .3em .9em;
-      border-radius: 5px; }
-      @media (min-width: 64em) {
-        .user-profile .profile-data-controls .profile-controls-right .edit-user-btn {
-          font-size: .6em; } }
-.user-profile .user-profile-avatar {
+
+.user-profile-avatar {
   position: absolute;
   left: 8%;
   bottom: -28%;
   z-index: 1; }
-  .user-profile .user-profile-avatar .user-card-avatar {
+  .user-profile-avatar .user-card-avatar {
     border: 5px solid white;
     width: 200px;
     height: 200px; }
